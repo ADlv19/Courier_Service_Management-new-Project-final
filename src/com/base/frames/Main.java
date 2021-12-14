@@ -88,8 +88,6 @@ public class Main extends JFrame implements ActionListener{
         this.setSize(1020, 720);
         this.setLocation(200,50);
         this.setVisible(true);
-
-        
     }
 
     @Override

@@ -17,13 +17,10 @@ public class MainFrame extends JFrame implements ActionListener {
     //JButton seePreviousOrders;
 
     public MainFrame() {
-
         ImageIcon img = new ImageIcon("courierMan.png");
         ImageIcon loginpic = new ImageIcon("LoginButton.jpg");
         ImageIcon signUppic = new ImageIcon("SignUpButton.png");
-
         JLabel label = new JLabel();
-
         login = new JButton("", loginpic);
         signUP = new JButton("", signUppic);
         //seePreviousOrders = new JButton("See Previous Orders");
@@ -40,8 +37,7 @@ public class MainFrame extends JFrame implements ActionListener {
         label.setBorder(border);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setHorizontalAlignment(JLabel.CENTER);
-
-
+        
         login.setBounds(200, 650, 100, 50);
         signUP.setBounds(650, 650, 100, 50);
         //seePreviousOrders.setBounds(400, 650, 150, 50);

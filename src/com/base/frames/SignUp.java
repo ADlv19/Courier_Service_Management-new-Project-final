@@ -22,7 +22,6 @@ public class SignUp extends JFrame implements ActionListener {
     CustomerDAO customerDAO = new CustomerDAO();
 
     public SignUp() {
-
         jf = new JFrame();
         ImageIcon ic = new ImageIcon("gradienta-LeG68PrXA6Y-unsplash.jpg");
         l1 = new JLabel("Welcome to our Courier Service");
