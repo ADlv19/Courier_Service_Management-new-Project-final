@@ -112,9 +112,5 @@ public class Main extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null,"ORDER PLACED SUCCESSFULLY","PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);
                 setVisible(false);
         }
-
-
     }
-
-
 }
