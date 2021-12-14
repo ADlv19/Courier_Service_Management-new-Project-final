@@ -79,8 +79,7 @@ class UpiPayment extends JFrame implements ActionListener {
         this.setSize(520, 320);
         this.setLocation(500,250);
         this.setVisible(true);
-
-
+        
     }
 
     @Override

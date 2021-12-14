@@ -34,26 +34,26 @@ public class PaymentMine extends JFrame {
         label5 = new JLabel();
         label6 = new JLabel();
         label7 = new JLabel();
-        label8 = new JLabel();
+        phoneLabelToGetData = new JLabel();
         label9 = new JLabel();
-        label10 = new JLabel();
-        label11 = new JLabel();
+        emailLabelToGetData = new JLabel();
+        nameLabelToGetData = new JLabel();
         label12 = new JLabel();
-        label13 = new JLabel();
+        dateLabelToGetData = new JLabel();
         label14 = new JLabel();
         scrollPane1 = new JScrollPane();
-        addressTextArea = new JTextArea();
+        addressTextAreaToGetData = new JTextArea();
         label15 = new JLabel();
         label1 = new JLabel();
-        label2 = new JLabel();
+        receiverNameLabelToGetData = new JLabel();
         label3 = new JLabel();
         label4 = new JLabel();
-        label16 = new JLabel();
+        totalCostLabelToGetData = new JLabel();
         label17 = new JLabel();
-        label18 = new JLabel();
+        itemTypeLabelToGetData = new JLabel();
         label19 = new JLabel();
         scrollPane2 = new JScrollPane();
-        textArea1 = new JTextArea();
+        receiverAddressLabelToGetData = new JTextArea();
 
         //======== this ========
         setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 20));
@@ -71,7 +71,7 @@ public class PaymentMine extends JFrame {
         receiptNumberLabel.setForeground(new Color(255, 153, 153));
 
         //---- customerInfoLabel ----
-        customerInfoLabel.setText("Customer Information :");
+        customerInfoLabel.setText("Customer Information");
         customerInfoLabel.setFont(new Font(".AppleSystemUIFont", Font.BOLD | Font.ITALIC, 28));
 
         //---- label5 ----
@@ -87,42 +87,42 @@ public class PaymentMine extends JFrame {
         label7.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 16));
         label7.setForeground(Color.black);
 
-        //---- label8 ----
-        label8.setText("Phone Label");
-        label8.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 16));
+        //---- phoneLabelToGetData ----
+        phoneLabelToGetData.setText("Phone Label");
+        phoneLabelToGetData.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 16));
 
         //---- label9 ----
         label9.setText("Phone");
         label9.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 16));
 
-        //---- label10 ----
-        label10.setText("Email");
-        label10.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 16));
+        //---- emailLabelToGetData ----
+        emailLabelToGetData.setText("Email");
+        emailLabelToGetData.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 16));
 
-        //---- label11 ----
-        label11.setText("Name");
-        label11.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 16));
+        //---- nameLabelToGetData ----
+        nameLabelToGetData.setText("Name");
+        nameLabelToGetData.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 16));
 
         //---- label12 ----
         label12.setText("Delivery Date");
         label12.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 16));
 
-        //---- label13 ----
-        label13.setText("16-12-1996");
-        label13.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 16));
+        //---- dateLabelToGetData ----
+        dateLabelToGetData.setText("16-12-1996");
+        dateLabelToGetData.setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 16));
 
         //---- label14 ----
         label14.setText("Delivery Address");
         label14.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 16));
-        label14.setLabelFor(addressTextArea);
+        label14.setLabelFor(addressTextAreaToGetData);
 
         //======== scrollPane1 ========
         {
 
-            //---- addressTextArea ----
-            addressTextArea.setLineWrap(true);
-            addressTextArea.setText("ikebavreg erhgo54gj wfgbruitc34 c94cht 953opth4ct 4fhrg c598th498rohcrg9prc g3rtg v58t54t");
-            scrollPane1.setViewportView(addressTextArea);
+            //---- addressTextAreaToGetData ----
+            addressTextAreaToGetData.setLineWrap(true);
+            addressTextAreaToGetData.setText("ikebavreg erhgo54gj wfgbruitc34 c94cht 953opth4ct 4fhrg c598th498rohcrg9prc g3rtg v58t54t");
+            scrollPane1.setViewportView(addressTextAreaToGetData);
         }
 
         //---- label15 ----
@@ -133,8 +133,9 @@ public class PaymentMine extends JFrame {
         label1.setText("Received By");
         label1.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 16));
 
-        //---- label2 ----
-        label2.setText("Name");
+        //---- receiverNameLabelToGetData ----
+        receiverNameLabelToGetData.setText("Name");
+        receiverNameLabelToGetData.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 
         //---- label3 ----
         label3.setText("Subtotal");
@@ -143,15 +144,17 @@ public class PaymentMine extends JFrame {
         //---- label4 ----
         label4.setText("text");
 
-        //---- label16 ----
-        label16.setText("Total");
+        //---- totalCostLabelToGetData ----
+        totalCostLabelToGetData.setText("Total");
+        totalCostLabelToGetData.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 
         //---- label17 ----
         label17.setText("Item Type");
         label17.setFont(new Font(".AppleSystemUIFont", Font.BOLD, 16));
 
-        //---- label18 ----
-        label18.setText("Type");
+        //---- itemTypeLabelToGetData ----
+        itemTypeLabelToGetData.setText("Type");
+        itemTypeLabelToGetData.setFont(new Font("Segoe UI", Font.PLAIN, 16));
 
         //---- label19 ----
         label19.setText("Address");
@@ -160,12 +163,12 @@ public class PaymentMine extends JFrame {
         //======== scrollPane2 ========
         {
 
-            //---- textArea1 ----
-            textArea1.setLineWrap(true);
-            textArea1.setWrapStyleWord(true);
-            textArea1.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum of Lorem Ipsum.");
-            textArea1.setEditable(false);
-            scrollPane2.setViewportView(textArea1);
+            //---- receiverAddressLabelToGetData ----
+            receiverAddressLabelToGetData.setLineWrap(true);
+            receiverAddressLabelToGetData.setWrapStyleWord(true);
+            receiverAddressLabelToGetData.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum of Lorem Ipsum.");
+            receiverAddressLabelToGetData.setEditable(false);
+            scrollPane2.setViewportView(receiverAddressLabelToGetData);
         }
 
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
@@ -194,11 +197,11 @@ public class PaymentMine extends JFrame {
                                 .addGroup(contentPaneLayout.createSequentialGroup()
                                     .addComponent(label7, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(label10, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(emailLabelToGetData, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE))
                                 .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
                                     .addComponent(label9, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(label8, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(phoneLabelToGetData, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(contentPaneLayout.createParallelGroup()
                                 .addComponent(label14, GroupLayout.PREFERRED_SIZE, 151, GroupLayout.PREFERRED_SIZE)
@@ -207,13 +210,13 @@ public class PaymentMine extends JFrame {
                             .addContainerGap()
                             .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(GroupLayout.Alignment.LEADING, contentPaneLayout.createSequentialGroup()
-                                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(contentPaneLayout.createParallelGroup()
                                         .addGroup(contentPaneLayout.createSequentialGroup()
                                             .addComponent(label1, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(label2, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(receiverNameLabelToGetData, GroupLayout.PREFERRED_SIZE, 179, GroupLayout.PREFERRED_SIZE))
                                         .addComponent(label19, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(scrollPane2))
+                                        .addComponent(scrollPane2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                     .addGroup(contentPaneLayout.createParallelGroup()
                                         .addGroup(contentPaneLayout.createSequentialGroup()
                                             .addGap(75, 75, 75)
@@ -225,22 +228,23 @@ public class PaymentMine extends JFrame {
                                                 .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
                                                     .addComponent(label17, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(label18, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(itemTypeLabelToGetData, GroupLayout.PREFERRED_SIZE, 105, GroupLayout.PREFERRED_SIZE))
                                                 .addGroup(GroupLayout.Alignment.TRAILING, contentPaneLayout.createSequentialGroup()
                                                     .addComponent(label3, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(label16, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE))))))
+                                                    .addComponent(totalCostLabelToGetData, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE))))))
                                 .addGroup(GroupLayout.Alignment.LEADING, contentPaneLayout.createSequentialGroup()
                                     .addComponent(label6, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(contentPaneLayout.createParallelGroup()
-                                        .addComponent(customerInfoLabel, GroupLayout.PREFERRED_SIZE, 418, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(contentPaneLayout.createSequentialGroup()
-                                            .addComponent(label11, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(nameLabelToGetData, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(label12)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(label13, GroupLayout.PREFERRED_SIZE, 117, GroupLayout.PREFERRED_SIZE)))))))
+                                            .addComponent(dateLabelToGetData, GroupLayout.PREFERRED_SIZE, 117, GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(customerInfoLabel, GroupLayout.PREFERRED_SIZE, 328, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(64, 64, 64)))))
                     .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
@@ -257,13 +261,13 @@ public class PaymentMine extends JFrame {
                     .addGap(22, 22, 22)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label12, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label11, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nameLabelToGetData, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
                         .addComponent(label6, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label13, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dateLabelToGetData, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label7, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label10, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(emailLabelToGetData, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
                         .addComponent(label14, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE))
                     .addGroup(contentPaneLayout.createParallelGroup()
                         .addGroup(contentPaneLayout.createSequentialGroup()
@@ -272,7 +276,7 @@ public class PaymentMine extends JFrame {
                                     .addGap(16, 16, 16)
                                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(label9, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(label8, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(phoneLabelToGetData, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)))
                                 .addGroup(contentPaneLayout.createSequentialGroup()
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)))
@@ -284,15 +288,15 @@ public class PaymentMine extends JFrame {
                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                         .addComponent(label1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                        .addComponent(label18, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(itemTypeLabelToGetData, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE)
                         .addComponent(label17, GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                        .addComponent(label2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+                        .addComponent(receiverNameLabelToGetData, GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                     .addGroup(contentPaneLayout.createParallelGroup()
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addGap(32, 32, 32)
                             .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addComponent(label3, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(label16, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(totalCostLabelToGetData, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)))
                         .addGroup(contentPaneLayout.createSequentialGroup()
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(label19, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
@@ -303,8 +307,8 @@ public class PaymentMine extends JFrame {
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
-        addressTextArea.setEditable(false);
-
+        receiverAddressLabelToGetData.setEditable(false);
+        addressTextAreaToGetData.setEditable(false);
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
@@ -315,27 +319,26 @@ public class PaymentMine extends JFrame {
     private JLabel label5;
     private JLabel label6;
     private JLabel label7;
-    private JLabel label8;
+    private JLabel phoneLabelToGetData;
     private JLabel label9;
-    private JLabel label10;
-    private JLabel label11;
+    private JLabel emailLabelToGetData;
+    private JLabel nameLabelToGetData;
     private JLabel label12;
-    private JLabel label13;
+    private JLabel dateLabelToGetData;
     private JLabel label14;
     private JScrollPane scrollPane1;
-    private JTextArea addressTextArea;
+    private JTextArea addressTextAreaToGetData;
     private JLabel label15;
     private JLabel label1;
-    private JLabel label2;
+    private JLabel receiverNameLabelToGetData;
     private JLabel label3;
     private JLabel label4;
-    private JLabel label16;
+    private JLabel totalCostLabelToGetData;
     private JLabel label17;
-    private JLabel label18;
+    private JLabel itemTypeLabelToGetData;
     private JLabel label19;
     private JScrollPane scrollPane2;
-    private JTextArea textArea1;
+    private JTextArea receiverAddressLabelToGetData;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
-
-
+    
 }
