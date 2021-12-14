@@ -131,7 +131,7 @@ public class PaymentWindow extends JFrame implements ActionListener {
         }else if (e.getSource() == r4) {
             setVisible(false);
             JOptionPane.showMessageDialog(null, "ORDER PLACED SUCCESSFULLY", "PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);
-            new PaymentMine(PaymentWindow.csi);
+            new PaymentMine(PaymentWindow.csi).setVisible(true);
         }
     }
 }
