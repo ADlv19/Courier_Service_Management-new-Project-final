@@ -41,10 +41,8 @@ public class SRDetails<data> extends JFrame implements ActionListener {
     }
 
     public SRDetails(CustomerInfo csi) {
-
         SRDetails.csi = csi;
-
-        /**model = new DefaultListModel<>();
+        /** model = new DefaultListModel<>();
         list = new JList<>(model);
         list.setBounds(655, 430, 300, 200);
 
@@ -53,7 +51,6 @@ public class SRDetails<data> extends JFrame implements ActionListener {
         table.setBounds(30, 40, 200, 300);
         jsp = new JScrollPane(table);
         jsp.setBounds(690, 430, 300, 300);*/
-
         // BackGround Label Gradient
         {
             ImageIcon ic = new ImageIcon("neon_gradient.jpg");
@@ -69,7 +66,6 @@ public class SRDetails<data> extends JFrame implements ActionListener {
             l1.setForeground(Color.white);
             l1.setOpaque(true);
         }
-
         // Sender Reciever Label
         sender = new JLabel("Sender");
         sender.setFont(new Font("Osward", Font.BOLD, 35));
@@ -80,8 +76,7 @@ public class SRDetails<data> extends JFrame implements ActionListener {
         reciever.setFont(new Font("Osward", Font.BOLD, 35));
         reciever.setBounds(700, -70, 200, 200);
         reciever.setForeground(Color.white);
-
-
+        
         // All Labels and their Text Fields
         l2 = new JLabel("Name :");
         l2.setFont(new Font("Osward", Font.BOLD, 30));
@@ -203,25 +198,25 @@ public class SRDetails<data> extends JFrame implements ActionListener {
             clearSen.setFont(new Font("Arial", Font.ITALIC, 30));
             clearSen.setBounds(425, 520, 140, 40);
             clearSen.setBackground(Color.black);
-            clearSen.setForeground(Color.black);
+            clearSen.setForeground(Color.white);
 
             clearRec = new JButton("Clear");
             clearRec.setFont(new Font("Arial", Font.ITALIC, 30));
             clearRec.setBounds(750, 530, 140, 40);
             clearRec.setBackground(Color.black);
-            clearRec.setForeground(Color.black);
+            clearRec.setForeground(Color.white);
 
             submit = new JButton("Submit");
             submit.setFont(new Font("Arial", Font.ITALIC, 30));
             submit.setBounds(600, 700, 140, 60);
             submit.setBackground(Color.black);
-            submit.setForeground(Color.black);
+            submit.setForeground(Color.white);
 
             back = new JButton("Back");
             back.setFont(new Font("Arial", Font.ITALIC, 30));
             back.setBounds(750, 700, 140, 60);
             back.setBackground(Color.black);
-            back.setForeground(Color.black);
+            back.setForeground(Color.white);
 
             /*addItem = new JButton("Add Item");
             addItem.setFont(new Font("Arial", Font.ITALIC, 22));
@@ -282,10 +277,8 @@ public class SRDetails<data> extends JFrame implements ActionListener {
         this.add(l1);
         // This.adding Text Fields
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
-
         if (e.getSource() == clearRec) {
             tfl22.setText("");
             tfl32.setText("");
@@ -338,7 +331,6 @@ public class SRDetails<data> extends JFrame implements ActionListener {
             new PaymentWindow(SRDetails.csi,productObjToPass,sender,receiver).setVisible(true);
         }
     }
-
     private Double weightOfParcel(String str){
         double weight =0;
         if (str.equalsIgnoreCase("1 to 5 kg")){
@@ -354,9 +346,7 @@ public class SRDetails<data> extends JFrame implements ActionListener {
         }
         return weight;
     }
-
     private Product calculation() {
-
         Product product = new Product();
         String from = String.valueOf(jcbFrom.getSelectedItem());
         String to = String.valueOf(jcbTo.getSelectedItem());
@@ -437,13 +427,11 @@ public class SRDetails<data> extends JFrame implements ActionListener {
         }
         return product;
     }
-
     private String getCurrentDate(){
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yy");
         Date date = new Date();
         return formatter.format(date);
     }
-
     private String calculateEstDeliveryDate(Double dist) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
         Calendar cal = Calendar.getInstance();

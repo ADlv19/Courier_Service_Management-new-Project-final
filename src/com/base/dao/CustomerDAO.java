@@ -90,7 +90,6 @@ public class CustomerDAO {
                 csi.setLastName(rs.getString("Last_Name"));
                 csi.setPhoneNumber(rs.getString("Mobile_Number"));
             }
-            emailID = csi.getPassword();
             customerID = csi.getCustomerID();
         } catch (Exception ex) {
             ex.printStackTrace();
