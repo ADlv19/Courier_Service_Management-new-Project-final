@@ -16,10 +16,10 @@ public class PaymentWindow extends JFrame implements ActionListener {
         new PaymentWindow(csi, product, sender, receiver);
     }
 
-    static CustomerInfo csi;
-    static Product product;
-    static OrderDetails sender;
-    static OrderDetails receiver;
+    static CustomerInfo csi = new CustomerInfo();
+    static Product product = new Product();
+    static OrderDetails sender = new OrderDetails();
+    static OrderDetails receiver = new OrderDetails();
 
     JLabel l1, totalFee;
     JButton b1, b2;

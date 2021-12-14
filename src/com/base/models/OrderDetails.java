@@ -28,7 +28,11 @@ public class OrderDetails {
         this.address = address;
         this.phone = phone;
     }
-
+    
+    public OrderDetails() {
+    
+    }
+    
     public int getOrderId() {
         return orderId;
     }
