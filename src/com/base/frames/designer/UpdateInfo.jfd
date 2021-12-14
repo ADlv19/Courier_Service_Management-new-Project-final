@@ -1,0 +1,111 @@
+JFDML JFormDesigner: "7.0.5.0.404" Java: "11.0.13" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {par l {seq l {space :43::x, par l {comp updatePassTxt::t:p:156:p, par l:t::p {comp fNameTxt::l::161:x, comp phoneNumTxt::l::161:x, comp confirmPassTxt::l:p:150:p, comp emailTxt::l::161:x}, comp lNameTxt::t:p:161:p}, space ::35:x, par l {comp lastName::t:p:140:p, par l:t::p {comp conirmPassword::::140:x, comp emailField::::140:x, comp firstName::l::140:x}, comp phoneNum::t:p:140:p, comp password::t:p:140:p}, space :p:9:p, comp label6:::p:100:p, space :::p, comp passForLogin:::p:136:p}, seq {space :p:95:p, comp updateBtn:::p:163:p, space :0:335:x}}, space :::p}, seq t {space :0:176:x, comp label1:::p:320:p, space :p:103:p}}"
+					"$verticalGroup": "par l {seq {space :p:20:p, comp label1:::p:46:p, space :p:34:p, par b {comp emailField::b:p::p, comp label6::b:p:30:p, comp emailTxt::b:p:30:p, comp passForLogin::b:p::p}, space :p:44:p, par b {comp fNameTxt::b:p:30:p, comp firstName::b:p::p}, space :p:42:p, par b {comp lNameTxt::b:p:30:p, comp lastName::b:p::p}, space :p:33:p, par b {comp phoneNumTxt::b:p:30:p, comp phoneNum::b:p::p}, space :p:48:p, par b {comp updatePassTxt::b:p:30:p, comp password::b:p::p}, space :p:48:p, par b {comp conirmPassword::b:p::p, comp confirmPassTxt::b:::x}, space :p:53:p, comp updateBtn:::p::p, space ::72:x}}"
+				} ) {
+					name: "contentPanel"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "fNameTxt"
+						"text": "First Name"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "firstName"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "phoneNumTxt"
+						"text": "Phone Number"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "phoneNum"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "emailTxt"
+						"text": "Email ID"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "emailField"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lNameTxt"
+						"text": "Last Name"
+					} )
+					add( new FormComponent( "javax.swing.JTextField" ) {
+						name: "lastName"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label6"
+						"text": "Password"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "updatePassTxt"
+						"text": "Update Password"
+					} )
+					add( new FormComponent( "javax.swing.JPasswordField" ) {
+						name: "password"
+					} )
+					add( new FormComponent( "javax.swing.JPasswordField" ) {
+						name: "conirmPassword"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "confirmPassTxt"
+						"text": "Confirm Password"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "updateBtn"
+						"text": "UPDATE"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "updateBtn", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JPasswordField" ) {
+						name: "passForLogin"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label1"
+						"text": "Update User Info"
+						"font": new java.awt.Font( ".AppleSystemUIFont", 3, 30 )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "North"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0:1.0, 80, 80"
+					"$rowSpecs": "0"
+					"$hGap": 5
+					"$vGap": 5
+				} ) {
+					name: "buttonBar"
+					"border": new javax.swing.border.EmptyBorder( 12, 0, 0, 0 )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "okButton"
+						"text": "OK"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 1
+						"gridy": 0
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "cancelButton"
+						"text": "Cancel"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 0
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "South"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 195, 0 )
+			"size": new java.awt.Dimension( 625, 730 )
+		} )
+	}
+}

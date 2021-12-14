@@ -1,0 +1,15 @@
+public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == updateBtn){
+            String fName = firstName.getText();
+            String lName = lastName.getText();
+            String email = emailField.getText();
+            String phone = phoneNum.getText();
+            String pass = String.valueOf(password.getPassword());
+            String confirmPass = String.valueOf(conirmPassword.getPassword());
+            String passForLog = String.valueOf(passForLogin.getPassword());
+
+            System.out.println(fName +" " + lName + " " + email + " " + phone + " " + pass + " " + confirmPass + " " + passForLog);
+
+            //hemllo
+        }
+    }

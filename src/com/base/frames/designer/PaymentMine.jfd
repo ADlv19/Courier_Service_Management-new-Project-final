@@ -1,0 +1,146 @@
+JFDML JFormDesigner: "7.0.5.0.404" Java: "11.0.12" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq t {space :0:0:x, par l {seq t {comp label5:::p:304:p, space :p:82:p}, seq t {comp label15:::p:268:p, space :p:108:p}}}, seq {par l {seq l {space :p:147:p, comp receiptNumLabel:::p:115:p, space u:::p, comp receiptNumberLabel:::p:183:p}, seq l {space :::p, par l:::p {seq {comp label7:::p:74:p, space u:::p, comp label10:::p:125:p}, seq t {comp label9:::p:74:p, space :::x, comp label8:::p:125:p}}, space :::p, par l {comp label14:::p:151:p, comp scrollPane1:::p:273:p}}, seq l {space :::p, par t:::p {seq l {par l:::p {seq {comp label1:::p:113:p, space :::p, comp label2:::p:179:p}, comp label19::l:p:149:p, comp scrollPane2::l:::x}, par l {seq {space :p:75:p, comp label4:::p::p, space :0:0:x}, seq t {space ::9:x, par l {seq t {comp label17:::p:98:p, space :::p, comp label18:::p:105:p}, seq t {comp label3:::p:102:p, space :::p, comp label16:::p:106:p}}}}}, seq l {comp label6:::p:80:p, space :::p, par l {comp customerInfoLabel:::p:418:p, seq l {comp label11:::p:125:p, space :::p, comp label12:::p::p, space :::p, comp label13:::p:117:p}}}}}}, space :::x}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp label5:::p:69:p, space :::p, par b {comp receiptNumberLabel::b:p:34:p, comp receiptNumLabel::b:p:34:p}, space :::p, comp customerInfoLabel:::p:30:p, space :p:22:p, par b {comp label12::b:p:38:p, comp label11::b:p:38:p, comp label6::b:p:35:p, comp label13::b:p:30:p}, space u:::p, par b {comp label7::b:p:33:p, comp label10::b:p:37:p, comp label14::b:p:37:p}, par l {seq l {par l {seq {space :p:16:p, par b {comp label9::b:p:34:p, comp label8::b:p:35:p}}, seq l {space :::p, comp scrollPane1:::p:71:p}}, space :p:30:p, comp label15:::p:62:p}, seq l {space :::p, comp label4:::p::p}}, space :::p, par b {comp label1::b:p:30:p, comp label18::b:p:31:p, comp label17::b::31:x, comp label2::b:p:30:p}, par l {seq l {space :p:32:p, par t {comp label3:::p:30:p, comp label16:::p:30:p}}, seq l {space :::p, comp label19:::p:30:p, space :::p, comp scrollPane2:::p:84:p}}, space :p:59:p}}"
+		} ) {
+			name: "this"
+			"font": new java.awt.Font( ".AppleSystemUIFont", 0, 20 )
+			"autoRequestFocus": false
+			"resizable": false
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "receiptNumLabel"
+				"text": "Receipt :"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 0, 20 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "receiptNumberLabel"
+				"text": "Error"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 0, 20 )
+				"foreground": new java.awt.Color( 255, 153, 153, 255 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "customerInfoLabel"
+				"text": "Customer Information :"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 3, 28 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Delivery Receipt"
+				"font": new java.awt.Font( "Academy Engraved LET", 0, 36 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "Name"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 1, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "Email"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 1, 16 )
+				"foreground": new java.awt.Color( 0, 0, 0, 255 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label8"
+				"text": "Phone Label"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label9"
+				"text": "Phone"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 1, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label10"
+				"text": "Email"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label11"
+				"text": "Name"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label12"
+				"text": "Delivery Date"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 1, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label13"
+				"text": "16-12-1996"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 0, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label14"
+				"text": "Delivery Address"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 1, 16 )
+				"labelFor": new FormReference( "addressTextArea" )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "addressTextArea"
+					"lineWrap": true
+					"text": "ikebavreg erhgo54gj wfgbruitc34 c94cht 953opth4ct 4fhrg c598th498rohcrg9prc g3rtg v58t54t"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label15"
+				"text": "Order Details"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 3, 28 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Received By"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 1, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Name"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Subtotal"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 1, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "text"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label16"
+				"text": "Total"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label17"
+				"text": "Item Type"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 1, 16 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label18"
+				"text": "Type"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label19"
+				"text": "Address"
+				"font": new java.awt.Font( ".AppleSystemUIFont", 1, 16 )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane2"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea1"
+					"lineWrap": true
+					"wrapStyleWord": true
+					"text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum of Lorem Ipsum."
+					"editable": false
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 120, 0 )
+			"size": new java.awt.Dimension( 535, 685 )
+		} )
+	}
+}

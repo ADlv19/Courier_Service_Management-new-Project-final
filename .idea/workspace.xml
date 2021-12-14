@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9915f566-df47-4bf0-b3dd-3c8e4032c717" name="Changes" comment="comm.it" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="225ysVeiHkUQyIh5dtrF3SvgerX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Softwares/postgresql-42.2.23.jar" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com/base/frames/designer" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainFrame">
+    <configuration name="CustomerDashboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.base.frames.designer.CustomerDashboard" />
+      <module name="Courier_Service_Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.base.frames.designer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.base.frames.Login" />
+      <module name="Courier_Service_Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.base.frames.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.base.frames.MainFrame" />
+      <module name="Courier_Service_Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.base.frames.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.base.frames.paymentVishal.PaymentWindow" />
+      <module name="Courier_Service_Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.base.frames.paymentVishal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UpiPayment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.base.frames.paymentVishal.UpiPayment" />
+      <module name="Courier_Service_Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.base.frames.paymentVishal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainFrame" />
+        <item itemvalue="Application.UpiPayment" />
+        <item itemvalue="Application.PaymentWindow" />
+        <item itemvalue="Application.Login" />
+        <item itemvalue="Application.CustomerDashboard" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9915f566-df47-4bf0-b3dd-3c8e4032c717" name="Changes" comment="" />
+      <created>1639141952202</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639141952202</updated>
+      <workItem from="1639141958757" duration="74000" />
+      <workItem from="1639142048220" duration="342000" />
+      <workItem from="1639142408301" duration="484000" />
+      <workItem from="1639142945519" duration="215000" />
+      <workItem from="1639143179220" duration="41000" />
+      <workItem from="1639143237875" duration="192000" />
+      <workItem from="1639143657462" duration="23081000" />
+      <workItem from="1639169633286" duration="11000" />
+      <workItem from="1639196977669" duration="3410000" />
+      <workItem from="1639210500173" duration="2991000" />
+      <workItem from="1639221349229" duration="151000" />
+      <workItem from="1639221523688" duration="72000" />
+      <workItem from="1639224630008" duration="10849000" />
+      <workItem from="1639238588891" duration="1103000" />
+      <workItem from="1639289891551" duration="6818000" />
+      <workItem from="1639298880369" duration="3341000" />
+      <workItem from="1639303036263" duration="1657000" />
+      <workItem from="1639314436446" duration="14285000" />
+      <workItem from="1639394035281" duration="732000" />
+      <workItem from="1639395008862" duration="2556000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.name" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

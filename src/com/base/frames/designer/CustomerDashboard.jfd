@@ -1,0 +1,73 @@
+JFDML JFormDesigner: "7.0.5.0.404" Java: "11.0.13" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {space :p:139:p, comp label1:::p:140:p, space :::p, comp userName:::p:191:p, space ::43:x}, seq t {space :0:157:x, par l {comp newOrderButton:::p:231:p, comp previousOrderButton:::p:231:p, comp settingsButtom::l:p:231:p}, space :p:131:p}}"
+					"$verticalGroup": "par l {seq l {space :p:26:p, par l:::p {comp label1::::42:x, comp userName::::42:x}, space :p:96:p, comp previousOrderButton:::p:54:p, space :p:31:p, comp newOrderButton:::p:50:p, space :p:37:p, comp settingsButtom:::p:50:p, space ::189:x}}"
+				} ) {
+					name: "contentPanel"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label1"
+						"text": "Welcome"
+						"font": new java.awt.Font( ".AppleSystemUIFont", 3, 28 )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "userName"
+						"font": new java.awt.Font( ".AppleSystemUIFont", 3, 28 )
+						"text": "User"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "previousOrderButton"
+						"text": "See Previous Orders"
+						"font": new java.awt.Font( ".AppleSystemUIFont", 0, 20 )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "newOrderButton"
+						"text": "Place New Order"
+						"font": new java.awt.Font( ".AppleSystemUIFont", 0, 20 )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "newOrder", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "settingsButtom"
+						"text": "Settings"
+						"font": new java.awt.Font( ".AppleSystemUIFont", 0, 20 )
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "settingsButtom", true ) )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridBagLayout ) {
+					"$columnSpecs": "0:1.0, 80, 80"
+					"$rowSpecs": "0"
+					"$hGap": 5
+					"$vGap": 5
+				} ) {
+					name: "buttonBar"
+					"border": new javax.swing.border.EmptyBorder( 12, 0, 0, 0 )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "cancelButton"
+						"text": "Cancel"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelButton", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
+						"gridx": 2
+						"gridy": 0
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "South"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 85, 0 )
+			"size": new java.awt.Dimension( 545, 665 )
+		} )
+	}
+}
