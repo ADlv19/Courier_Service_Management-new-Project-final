@@ -66,13 +66,12 @@ public class CustomerDashboard extends JFrame {
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
-            dialogPane.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new
-            javax. swing. border. EmptyBorder( 0, 0, 0, 0) , "", javax
-            . swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java
-            .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
-            . Color. red) ,dialogPane. getBorder( )) ); dialogPane. addPropertyChangeListener (new java. beans.
-            PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .
-            equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+            dialogPane.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.
+            border.EmptyBorder(0,0,0,0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn",javax.swing.border.TitledBorder.CENTER
+            ,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dia\u006cog",java.awt.Font
+            .BOLD,12),java.awt.Color.red),dialogPane. getBorder()));dialogPane. addPropertyChangeListener(
+            new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("\u0062ord\u0065r"
+            .equals(e.getPropertyName()))throw new RuntimeException();}});
             dialogPane.setLayout(new BorderLayout());
 
             //======== contentPanel ========
@@ -84,7 +83,7 @@ public class CustomerDashboard extends JFrame {
 
                 //---- userName ----
                 userName.setFont(new Font(".AppleSystemUIFont", Font.BOLD | Font.ITALIC, 28));
-                userName.setText("User");
+                userName.setText(csi.getFirstName() + " " + csi.getLastName());
 
                 //---- previousOrderButton ----
                 previousOrderButton.setText("See Previous Orders");
@@ -105,11 +104,11 @@ public class CustomerDashboard extends JFrame {
                 contentPanelLayout.setHorizontalGroup(
                     contentPanelLayout.createParallelGroup()
                         .addGroup(contentPanelLayout.createSequentialGroup()
-                            .addGap(139, 139, 139)
+                            .addGap(18, 18, 18)
                             .addComponent(label1, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(userName, GroupLayout.PREFERRED_SIZE, 191, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(43, Short.MAX_VALUE))
+                            .addComponent(userName, GroupLayout.PREFERRED_SIZE, 337, GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(18, Short.MAX_VALUE))
                         .addGroup(GroupLayout.Alignment.TRAILING, contentPanelLayout.createSequentialGroup()
                             .addGap(0, 157, Short.MAX_VALUE)
                             .addGroup(contentPanelLayout.createParallelGroup()
@@ -122,16 +121,16 @@ public class CustomerDashboard extends JFrame {
                     contentPanelLayout.createParallelGroup()
                         .addGroup(contentPanelLayout.createSequentialGroup()
                             .addGap(26, 26, 26)
-                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                .addComponent(label1, GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                                .addComponent(userName, GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
+                            .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(label1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(userName, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE))
                             .addGap(96, 96, 96)
                             .addComponent(previousOrderButton, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE)
                             .addGap(31, 31, 31)
                             .addComponent(newOrderButton, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
                             .addGap(37, 37, 37)
                             .addComponent(settingsButtom, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(189, Short.MAX_VALUE))
+                            .addContainerGap(181, Short.MAX_VALUE))
                 );
             }
             dialogPane.add(contentPanel, BorderLayout.CENTER);
