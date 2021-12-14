@@ -35,18 +35,18 @@ public class PaymentWindow extends JFrame implements ActionListener {
         l1 = new JLabel("SELECT PAYMENT METHOD");
         l1.setFont(new Font("Osward", Font.BOLD, 34));
 
-        totalFee = new JLabel("Total fee" + PaymentWindow.product.getFee());
+        totalFee = new JLabel("Total fee " + PaymentWindow.product.getFee());
         totalFee.setFont(new Font("Osward", Font.BOLD, 20));
         totalFee.setBounds(400,100,500,100);
         add(totalFee);
 
         b1 = new JButton("BACK");
         b1.setBackground(Color.BLACK);
-        b1.setForeground(Color.BLACK);
+        b1.setForeground(Color.white);
 
         b2 = new JButton("NEXT");
         b2.setBackground(Color.BLACK);
-        b2.setForeground(Color.BLACK);
+        b2.setForeground(Color.white);
 
         setLayout(null);
 
