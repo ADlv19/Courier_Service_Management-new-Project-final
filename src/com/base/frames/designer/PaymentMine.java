@@ -5,6 +5,8 @@
 package com.base.frames.designer;
 
 import com.base.models.CustomerInfo;
+import com.base.models.OrderDetails;
+import com.base.models.Product;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,13 +17,19 @@ import java.awt.*;
 public class PaymentMine extends JFrame {
 
     static CustomerInfo csi;
+    static Product product;
+    static OrderDetails sender;
+    static OrderDetails receiver;
 
     public static void main(String[] args) {
-        new PaymentMine(csi).setVisible(true);
+        new PaymentMine(csi,product,sender,receiver).setVisible(true);
     }
 
-    public PaymentMine(CustomerInfo csi) {
+    public PaymentMine(CustomerInfo csi, Product product, OrderDetails sender, OrderDetails receiver) {
         PaymentMine.csi = csi;
+        PaymentMine.product = product;
+        PaymentMine.sender = sender;
+        PaymentMine.receiver = receiver;
         initComponents();
     }
 

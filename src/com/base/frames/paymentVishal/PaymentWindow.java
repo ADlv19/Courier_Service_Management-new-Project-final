@@ -1,5 +1,6 @@
 package com.base.frames.paymentVishal;
 
+import com.base.dao.CustomerDAO;
 import com.base.frames.designer.PaymentMine;
 import com.base.models.CustomerInfo;
 import com.base.models.OrderDetails;
@@ -12,6 +13,8 @@ import java.awt.event.ActionListener;
 
 public class PaymentWindow extends JFrame implements ActionListener {
 
+    CustomerDAO dao = new CustomerDAO();
+    
     public static void main(String[] args) {
         new PaymentWindow(csi, product, sender, receiver);
     }
@@ -129,9 +132,15 @@ public class PaymentWindow extends JFrame implements ActionListener {
             // Net Banking
             setVisible(false);
         }else if (e.getSource() == r4) {
+            
+            // Cash Payment
             setVisible(false);
             JOptionPane.showMessageDialog(null, "ORDER PLACED SUCCESSFULLY", "PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);
-            new PaymentMine(PaymentWindow.csi).setVisible(true);
+            boolean flag = dao.addProductDetailsToDB(csi,product);
+            if (flag) {
+                new PaymentMine(PaymentWindow.csi, PaymentWindow.product,PaymentWindow.sender,PaymentWindow.receiver).setVisible(true);
+            }
+            
         }
     }
 }

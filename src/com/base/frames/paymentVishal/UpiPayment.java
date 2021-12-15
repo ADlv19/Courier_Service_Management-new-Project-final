@@ -53,11 +53,11 @@ class UpiPayment extends JFrame implements ActionListener {
 
         b1 = new JButton("BACK");
         b1.setBackground(Color.BLACK);
-        b1.setForeground(Color.BLACK);
+        b1.setForeground(Color.WHITE);
 
         b2 = new JButton("NEXT");
         b2.setBackground(Color.BLACK);
-        b2.setForeground(Color.BLACK);
+        b2.setForeground(Color.WHITE);
 
         setLayout(null);
 
@@ -86,7 +86,7 @@ class UpiPayment extends JFrame implements ActionListener {
         if (e.getSource() == b2  ) {
             JOptionPane.showMessageDialog(null,"ORDER PLACED SUCCESSFULLY","PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);
             setVisible(false);
-            new PaymentMine(UpiPayment.csi).setVisible(true);
+            new PaymentMine(UpiPayment.csi, UpiPayment.product,UpiPayment.sender,UpiPayment.receiver).setVisible(true);
         }else if (e.getSource()==b1){
             dispose();
         }

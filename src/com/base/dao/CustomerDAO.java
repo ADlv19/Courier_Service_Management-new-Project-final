@@ -12,10 +12,6 @@ import java.sql.ResultSet;
 //This class is used for interacting with database (Writing queries and getting information)
 public class CustomerDAO {
 
-    int customerID;
-    int orderID;
-    String emailID;
-
     public boolean addCustomerToDB(CustomerInfo csi) {
         Connection conn = null;
         boolean flag = false;
@@ -44,26 +40,24 @@ public class CustomerDAO {
         return flag;
     }
 
-    public boolean addProductDetailsToDB(Product product, CustomerInfo csi) {
+    public boolean addProductDetailsToDB(CustomerInfo csi,Product product) {
         boolean flag = false;
         Connection conn;
         try {
             conn = DButil.getConnection("addProductDetailsToDB");
-            String query = "INSERT INTO Product_Details(Customer_ID,Parcel_Type,Parcel_Weight_KG,Order_Placed_Date,EST_Delivery_Date,Fee,Payment_Type) VALUES (?,?,?,?,?,?,?)";
+            String query = "INSERT INTO Product_Details(Customer_ID,Parcel_Type,Parcel_Weight_K,EST_Distance,Order_Placed_Date,EST_Delivery_Date,Fee,Payment_Type) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(query);
-            pstmt.setInt(1, customerID);
+            pstmt.setInt(1, csi.getCustomerID());
             pstmt.setString(2, product.getParcelType());
             pstmt.setDouble(3, product.getParcelWeightInKG());
             pstmt.setString(4, product.getOrderDate());
             pstmt.setString(5, product.getEstDeliveryDate());
             pstmt.setDouble(6, product.getFee());
             pstmt.setString(7, product.getPaymentType());
-
             int n = pstmt.executeUpdate();
             if (n > 0) {
                 flag = true;
             }
-
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -90,7 +84,6 @@ public class CustomerDAO {
                 csi.setLastName(rs.getString("Last_Name"));
                 csi.setPhoneNumber(rs.getString("Mobile_Number"));
             }
-            customerID = csi.getCustomerID();
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -121,13 +114,13 @@ public class CustomerDAO {
     }
 
 
-    public Product getProductDetailsFromDB(Product product) {
+    public Product getProductDetailsFromDB(CustomerInfo csi, Product product) {
         Connection conn = null;
         try {
             conn = DButil.getConnection("getProductDetailsFromDB");
-            String query = "SELECT Order_ID, Parcel_Type, Parcel_Weight_KG, Order_Placed_Date, EST_Delivery_Date, Dimensions, Fee, Payment_Type WHERE Customer_ID = ?";
+            String query = "SELECT Order_ID, Parcel_Type, Parcel_Weight_KG, Order_Placed_Date, EST_Delivery_Date, Dimensions, Fee, Payment_Type FROM Order_Details WHERE Customer_ID = ?";
             PreparedStatement pstmt = conn.prepareStatement(query);
-            pstmt.setInt(1, customerID);
+            pstmt.setInt(1, csi.getCustomerID());
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 product.setOrderID(rs.getInt("Order_ID"));
@@ -138,7 +131,6 @@ public class CustomerDAO {
                 product.setFee(rs.getDouble("Fee"));
                 product.setPaymentType(rs.getString("Payment_Type"));
             }
-
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -187,7 +179,6 @@ public class CustomerDAO {
             pstmt.setString(6,product.getEstDeliveryDate());
             pstmt.setDouble(7,product.getFee());
             pstmt.setString(8,product.getPaymentType());
-
             int n = pstmt.executeUpdate();
             if (n>1){
                 flag=true;
