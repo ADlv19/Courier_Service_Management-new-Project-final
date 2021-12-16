@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9915f566-df47-4bf0-b3dd-3c8e4032c717" name="Changes" comment="commit5" />
+    <list default="true" id="9915f566-df47-4bf0-b3dd-3c8e4032c717" name="Changes" comment="commit5">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/dao/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/paymentVishal/PaymentWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/paymentVishal/PaymentWindow.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +64,7 @@
       <recent name="$PROJECT_DIR$/src/com/base/frames/designer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainFrame">
+  <component name="RunManager" selected="Application.Login">
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.base.frames.Login" />
       <module name="Courier_Service_Management" />
@@ -87,12 +91,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentMine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.base.frames.designer.PaymentMine" />
+    <configuration name="PaymentWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.base.frames.paymentVishal.PaymentWindow" />
       <module name="Courier_Service_Management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.base.frames.designer.*" />
+          <option name="PATTERN" value="com.base.frames.paymentVishal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SRDetails" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.base.frames.SRDetails" />
+      <module name="Courier_Service_Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.base.frames.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,26 +130,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UpiPayment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.base.frames.paymentVishal.UpiPayment" />
-      <module name="Courier_Service_Management" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.base.frames.paymentVishal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainFrame" />
-        <item itemvalue="Application.PaymentMine" />
-        <item itemvalue="Application.UpdateInfo" />
         <item itemvalue="Application.Login" />
-        <item itemvalue="Application.UpiPayment" />
+        <item itemvalue="Application.PaymentWindow" />
+        <item itemvalue="Application.SRDetails" />
+        <item itemvalue="Application.UpdateInfo" />
+        <item itemvalue="Application.MainFrame" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +177,7 @@
       <workItem from="1639584090982" duration="2793000" />
       <workItem from="1639630471363" duration="582000" />
       <workItem from="1639645293001" duration="588000" />
-      <workItem from="1639649976839" duration="10383000" />
+      <workItem from="1639649976839" duration="18495000" />
     </task>
     <task id="LOCAL-00001" summary="comm.it">
       <created>1639463202013</created>
@@ -308,7 +312,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639669692442</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="commit5">
+      <created>1639670435782</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1639670435782</updated>
+    </task>
+    <task id="LOCAL-00021" summary="commit5">
+      <created>1639670490717</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1639670490717</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

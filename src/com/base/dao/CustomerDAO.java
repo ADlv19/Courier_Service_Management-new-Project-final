@@ -5,9 +5,7 @@ import com.base.models.OrderDetails;
 import com.base.models.Product;
 import com.base.utils.DButil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 //This class is used for interacting with database (Writing queries and getting information)
 public class CustomerDAO {
@@ -127,7 +125,7 @@ public class CustomerDAO {
         boolean flag = false;
         try {
             conn = DButil.getConnection("addSenderDetailsToDB");
-            String query = "INSERT INTO Recipient_Details(Order_ID,Customer_ID,Name,Pincode,City,Delivery_Address,Contact_Number) VALUES (?,?,?,?,?,?,?)";
+            String query = "INSERT INTO Recipient_Details(Order_ID,Customer_ID,R_Name,Pincode,City,Delivery_Address,Contact_Number) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(query);
             pstmt.setInt(1,receiver.getOrderId());
             pstmt.setInt(2, csi.getCustomerID());
@@ -243,5 +241,105 @@ public class CustomerDAO {
             DButil.closeConnection(conn, "updateCustomerDetails");
         }
         return flag;
+    }
+    public Object[][] getPassengerDetails() {
+        Connection conn = null ;
+        Object[][] data = null;
+        boolean status;
+        
+        try {
+            conn = DButil.getConnection("getPassengerDetails");
+            String QUERY = "Select p_id, user10_id, full_name, contact_no, gender, age from passenger";
+            
+            Statement statement = conn.createStatement();
+            
+            Statement stmt = conn.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = stmt.executeQuery (QUERY);
+            
+            int rowCount = getRowCount(rs); // Row Count
+            int columnCount = getColumnCount(rs); // Column Count
+            
+            data = new Object[rowCount][columnCount];
+            
+            rs.beforeFirst();
+            int i = 0;
+            while (rs.next()) {
+                int j = 0;
+                data[i][j++] = rs.getInt("p_id");
+                data[i][j++] = rs.getInt("user10_id");
+                data[i][j++] = rs.getString("full_name");
+                data[i][j++] = rs.getString("contact_no");
+                data[i][j++] = rs.getString("gender");
+                data[i][j++] = rs.getString("age");
+                i++;
+            }
+            status = true;
+            // Closing the Resources;
+            statement.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
+    private int getRowCount(ResultSet rs) {
+        try {
+            if(rs != null) {
+                rs.last();
+                return rs.getRow();
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    
+    private int getColumnCount(ResultSet rs) {
+        try {
+            if(rs != null)
+                return rs.getMetaData().getColumnCount();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    
+    public Object[][] getPreviousOrderDetails(Integer customerID) {
+        Object[][] data = null;
+        Connection conn = null;
+        try {
+            conn = DButil.getConnection("getPreviousOrderDetails");
+            String query = "SELECT Product_Details.order_id, Sender_Details.name, sender_address, R_name, delivery_address, parcel_type, parcel_weight_kg, fee FROM Sender_Details JOIN Recipient_Details ON Sender_Details.order_ID = Recipient_Details.order_ID JOIN Product_Details ON Product_Details.order_ID = Sender_Details.order_ID WHERE Product_details.customer_id = ?";
+            PreparedStatement pstmt = conn.prepareStatement(query);
+            pstmt.setInt(1, customerID);
+            
+            ResultSet rs = pstmt.executeQuery();
+            int rowCount = getRowCount(rs); // Row Count
+            int columnCount = getColumnCount(rs); // Column Count
+            data = new Object[rowCount][columnCount];
+            
+            int i=0;
+            while(rs.next()) {
+                int j=0;
+                data[i][j++] = rs.getInt("order_id");
+                data[i][j++] = rs.getString("name");
+                data[i][j++] = rs.getString("sender_address");
+                data[i][j++] = rs.getString("R_name");
+                data[i][j++] = rs.getString("delivery_address");
+                data[i][j++] = rs.getString("parcel_type");
+                data[i][j++] = rs.getString("parcel_weight_kg");
+                data[i][j++] = rs.getString("fee");
+                i++;
+            }
+            
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            DButil.closeConnection(conn, "getPreviousOrderDetails");
+        }
+        return data;
     }
 }

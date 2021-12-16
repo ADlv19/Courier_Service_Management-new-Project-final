@@ -71,7 +71,6 @@ public class PaymentWindow extends JFrame implements ActionListener {
         r1.setBackground(Color.white);
 
         r2 = new JRadioButton("Credit / Debit / ATM Card");
-        ;
         r2.setFont(new Font("Raleway", Font.BOLD, 24));
         r2.setBackground(Color.white);
 
