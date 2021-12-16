@@ -12,6 +12,8 @@ import java.sql.ResultSet;
 //This class is used for interacting with database (Writing queries and getting information)
 public class CustomerDAO {
 
+    int orderID= 0;
+    
     public boolean addCustomerToDB(CustomerInfo csi) {
         Connection conn = null;
         boolean flag = false;
@@ -47,7 +49,7 @@ public class CustomerDAO {
         Connection conn=null;
         try {
             conn = DButil.getConnection("addOrderDetailsToDB");
-            String query = "INSERT INTO Order_Details (Customer_ID,Parcel_Type,Parcel_Weight_KG,EST_Distance,Order_Placed_Date,EST_Delivery_Date,Fee,Payment_Type) VALUES (?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO Product_Details (Customer_ID,Parcel_Type,Parcel_Weight_KG,EST_Distance,Order_Placed_Date,EST_Delivery_Date,Fee,Payment_Type) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(query);
             pstmt.setInt(1,csi.getCustomerID());
             pstmt.setString(2,product.getParcelType());
@@ -68,23 +70,53 @@ public class CustomerDAO {
         }
         return flag;
     }
+    
+    public boolean getOrderIDFromDB(CustomerInfo csi,Product product) {
+        boolean flag = false;
+        Connection conn = null;
+        try {
+            conn = DButil.getConnection("getOrderIDFromDB");
+            String query = "SELECT Order_ID FROM Product_Details WHERE Customer_ID=? AND Parcel_Type=? AND Parcel_Weight_KG=? AND EST_Distance=? AND Order_Placed_Date=? AND EST_Delivery_Date=? AND Fee=? AND Payment_Type=?";
+            PreparedStatement pstmt = conn.prepareStatement(query);
+            pstmt.setInt(1,csi.getCustomerID());
+            pstmt.setString(2,product.getParcelType());
+            pstmt.setDouble(3,product.getParcelWeightInKG());
+            pstmt.setDouble(4,product.getDistance());
+            pstmt.setString(5,product.getOrderDate());
+            pstmt.setString(6,product.getEstDeliveryDate());
+            pstmt.setDouble(7,product.getFee());
+            pstmt.setString(8,product.getPaymentType());
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                product.setOrderID(rs.getInt("Order_ID"));
+                orderID = rs.getInt("Order_ID");
+                flag = true;
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }finally {
+            DButil.closeConnection(conn,"getOrderIDFromDB");
+        }
+        return flag;
+    }
 
     public boolean addSenderDetailsToDB(CustomerInfo csi,OrderDetails sender) {
         Connection conn;
         boolean flag = false;
         try {
             conn = DButil.getConnection("addSenderDetailsToDB");
-            String query = "INSERT INTO Sender_Details(Customer_ID,Sender_Name,Sender_Address,Sender_City,Sender_Pincode,Sender_Phone_Number) VALUES (?,?,?,?,?,?)";
+            String query = "INSERT INTO Sender_Details(Order_ID,Customer_ID,Name,Sender_Address,City,Pincode,Contact_Number) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(query);
-            pstmt.setInt(1, csi.getCustomerID());
-            pstmt.setString(2, sender.getName());
-            pstmt.setString(3, sender.getAddress());
-            pstmt.setString(4, sender.getCity());
-            pstmt.setString(5, sender.getPincode());
-            pstmt.setString(6, sender.getPhone());
+            pstmt.setInt(1,sender.getOrderId());
+            pstmt.setInt(2,csi.getCustomerID());
+            pstmt.setString(3,sender.getName());
+            pstmt.setString(4,sender.getAddress());
+            pstmt.setString(5,sender.getCity());
+            pstmt.setInt(6,Integer.parseInt(sender.getPincode()));
+            pstmt.setString(7,sender.getPhone());
             int n = pstmt.executeUpdate();
-            if (n > 0) {
-                flag = true;
+            if (n>0){
+                flag=true;
             }
         }catch (Exception ex){
             ex.printStackTrace();
@@ -97,14 +129,15 @@ public class CustomerDAO {
         boolean flag = false;
         try {
             conn = DButil.getConnection("addSenderDetailsToDB");
-            String query = "INSERT INTO Recipient_Details(Customer_ID,Sender_Name,Sender_Address,Sender_City,Sender_Pincode,Sender_Phone_Number) VALUES (?,?,?,?,?,?)";
+            String query = "INSERT INTO Recipient_Details(Order_ID,Customer_ID,Name,Pincode,City,Delivery_Address,Contact_Number) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(query);
-            pstmt.setInt(1, csi.getCustomerID());
-            pstmt.setString(2, receiver.getName());
-            pstmt.setString(3, receiver.getAddress());
-            pstmt.setString(4, receiver.getCity());
-            pstmt.setString(5, receiver.getPincode());
-            pstmt.setString(6, receiver.getPhone());
+            pstmt.setInt(1,receiver.getOrderId());
+            pstmt.setInt(2, csi.getCustomerID());
+            pstmt.setString(3, receiver.getName());
+            pstmt.setString(4, receiver.getAddress());
+            pstmt.setString(5, receiver.getCity());
+            pstmt.setString(6, receiver.getPincode());
+            pstmt.setString(7, receiver.getPhone());
             int n = pstmt.executeUpdate();
             if (n > 0) {
                 flag = true;
@@ -167,7 +200,7 @@ public class CustomerDAO {
         Connection conn = null;
         try {
             conn = DButil.getConnection("getProductDetailsFromDB");
-            String query = "SELECT Order_ID, Parcel_Type, Parcel_Weight_KG, Order_Placed_Date, EST_Delivery_Date, Dimensions, Fee, Payment_Type FROM Order_Details WHERE Customer_ID = ?";
+            String query = "SELECT Order_ID, Parcel_Type, Parcel_Weight_KG, Order_Placed_Date, EST_Delivery_Date, Dimensions, Fee, Payment_Type FROM Product_Details WHERE Customer_ID = ?";
             PreparedStatement pstmt = conn.prepareStatement(query);
             pstmt.setInt(1, csi.getCustomerID());
             ResultSet rs = pstmt.executeQuery();
