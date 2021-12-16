@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9915f566-df47-4bf0-b3dd-3c8e4032c717" name="Changes" comment="commit5">
-      <change beforePath="$PROJECT_DIR$/src/com/base/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/dao/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/designer/PaymentMine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/designer/PaymentMine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/designer/PaymentMine.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/designer/PaymentMine.jfd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,7 @@
       <recent name="$PROJECT_DIR$/src/com/base/frames/designer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UpdateInfo">
+  <component name="RunManager" selected="Application.PaymentMine">
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.base.frames.Login" />
       <module name="Courier_Service_Management" />
@@ -89,12 +90,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.base.frames.paymentVishal.PaymentWindow" />
+    <configuration name="PaymentMine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.base.frames.designer.PaymentMine" />
       <module name="Courier_Service_Management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.base.frames.paymentVishal.*" />
+          <option name="PATTERN" value="com.base.frames.designer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PaymentMine" />
         <item itemvalue="Application.UpdateInfo" />
         <item itemvalue="Application.MainFrame" />
         <item itemvalue="Application.Login" />
         <item itemvalue="Application.UpiPayment" />
-        <item itemvalue="Application.PaymentWindow" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +176,7 @@
       <workItem from="1639584090982" duration="2793000" />
       <workItem from="1639630471363" duration="582000" />
       <workItem from="1639645293001" duration="588000" />
-      <workItem from="1639649976839" duration="9133000" />
+      <workItem from="1639649976839" duration="9498000" />
     </task>
     <task id="LOCAL-00001" summary="comm.it">
       <created>1639463202013</created>
@@ -289,7 +290,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639668206933</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="commit5">
+      <created>1639668914834</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1639668914834</updated>
+    </task>
+    <task id="LOCAL-00018" summary="commit5">
+      <created>1639668933387</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1639668933388</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
