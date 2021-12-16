@@ -309,7 +309,7 @@ public class SRDetails<data> extends JFrame implements ActionListener {
             Product productObjToPass = new Product();
             productObjToPass.setCustomerID(SRDetails.csi.getCustomerID());
             productObjToPass.setParcelType(String.valueOf(jcbParcelType.getSelectedItem()));
-            productObjToPass.setParcelWeightInKG(weightOfParcel(String.valueOf(jcbWeigt)));
+            productObjToPass.setParcelWeightInKG(weightOfParcel(String.valueOf(jcbWeigt.getSelectedItem())));
             productObjToPass.setDistance(calculation().getDistance());
             productObjToPass.setOrderDate(getCurrentDate());
             productObjToPass.setEstDeliveryDate(calculateEstDeliveryDate(calculation().getDistance()));
@@ -331,18 +331,18 @@ public class SRDetails<data> extends JFrame implements ActionListener {
             new PaymentWindow(SRDetails.csi,productObjToPass,sender,receiver).setVisible(true);
         }
     }
-    private Double weightOfParcel(String str){
-        double weight =0;
+    private int weightOfParcel(String str){
+        int weight =0;
         if (str.equalsIgnoreCase("1 to 5 kg")){
-            weight =5;
+            weight = 5;
         }else if(str.equalsIgnoreCase("5 to 10 kg")){
-            weight =10;
+            weight = 10;
         }else if(str.equalsIgnoreCase("10 to 15 kg")){
-            weight=15;
+            weight = 15;
         }else if(str.equalsIgnoreCase("15 to 20 kg")){
-            weight=20;
+            weight = 20;
         }else if(str.equalsIgnoreCase("20 to 25 kg")){
-            weight=25;
+            weight = 25;
         }
         return weight;
     }

@@ -56,11 +56,11 @@ class CardPayment extends JFrame implements ActionListener {
 
         b1 = new JButton("BACK");
         b1.setBackground(Color.BLACK);
-        b1.setForeground(Color.BLACK);
+        b1.setForeground(Color.WHITE);
 
         b2 = new JButton("NEXT");
         b2.setBackground(Color.BLACK);
-        b2.setForeground(Color.BLACK);
+        b2.setForeground(Color.WHITE);
 
         setLayout(null);
 

@@ -132,9 +132,9 @@ public class CustomerDAO {
             pstmt.setInt(1,receiver.getOrderId());
             pstmt.setInt(2, csi.getCustomerID());
             pstmt.setString(3, receiver.getName());
-            pstmt.setString(4, receiver.getAddress());
+            pstmt.setInt(4, Integer.parseInt(receiver.getPincode()));
             pstmt.setString(5, receiver.getCity());
-            pstmt.setInt(6, Integer.parseInt(receiver.getPincode()));
+            pstmt.setString(6, receiver.getAddress());
             pstmt.setString(7, receiver.getPhone());
             int n = pstmt.executeUpdate();
             if (n > 0) {
