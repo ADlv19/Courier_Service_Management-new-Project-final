@@ -1,6 +1,7 @@
 package com.base.frames.paymentVishal;
 
 import com.base.dao.CustomerDAO;
+import com.base.frames.designer.PaymentMine;
 import com.base.models.CustomerInfo;
 import com.base.models.OrderDetails;
 import com.base.models.Product;
@@ -141,6 +142,7 @@ class CardPayment extends JFrame implements ActionListener {
                 
                 if (flag1 && flag2 && flag3){
                     JOptionPane.showMessageDialog(null, "ORDER PLACED SUCCESSFULLY", "PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);
+                    new PaymentMine(csi,product,sender,receiver).setVisible(true);
                 }
                 else{
                     JOptionPane.showMessageDialog(null,"Order Failed");

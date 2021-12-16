@@ -60,11 +60,8 @@ public class CustomerDAO {
             pstmt.setDouble(7,product.getFee());
             pstmt.setString(8,product.getPaymentType());
             System.out.println("hello Before execute");
-            int n = pstmt.executeUpdate();
-            System.out.println("hello After executeUpdate");
-            if (n>0){
-                flag=true;
-            }
+            pstmt.executeUpdate();
+            flag=true;
         }catch (Exception exception){
             exception.printStackTrace();
         }finally {

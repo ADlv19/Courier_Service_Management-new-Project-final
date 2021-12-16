@@ -63,10 +63,6 @@ public class MainFrame extends JFrame implements ActionListener {
             this.setVisible(false);
             new SignUp();
         }
-        /** else if (e.getSource() == seePreviousOrders) {
-            this.setVisible(false);
-            new PreviousOrders().setVisible(true);
-        }*/
     }
 }
 

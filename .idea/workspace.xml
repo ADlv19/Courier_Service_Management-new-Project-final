@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9915f566-df47-4bf0-b3dd-3c8e4032c717" name="Changes" comment="commit5">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/base/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/dao/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/base/frames/paymentVishal/CardPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/paymentVishal/CardPayment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/base/utils/DButil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/utils/DButil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +62,7 @@
       <recent name="$PROJECT_DIR$/src/com/base/frames/designer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainFrame">
+  <component name="RunManager" selected="Application.UpdateInfo">
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.base.frames.Login" />
       <module name="Courier_Service_Management" />
@@ -105,12 +102,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignUp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.base.frames.SignUp" />
+    <configuration name="UpdateInfo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.base.frames.designer.UpdateInfo" />
       <module name="Courier_Service_Management" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.base.frames.paymentVishal.*" />
+          <option name="PATTERN" value="com.base.frames.designer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UpdateInfo" />
         <item itemvalue="Application.MainFrame" />
         <item itemvalue="Application.Login" />
         <item itemvalue="Application.UpiPayment" />
         <item itemvalue="Application.PaymentWindow" />
-        <item itemvalue="Application.SignUp" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +175,7 @@
       <workItem from="1639584090982" duration="2793000" />
       <workItem from="1639630471363" duration="582000" />
       <workItem from="1639645293001" duration="588000" />
-      <workItem from="1639649976839" duration="8530000" />
+      <workItem from="1639649976839" duration="9133000" />
     </task>
     <task id="LOCAL-00001" summary="comm.it">
       <created>1639463202013</created>
@@ -285,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639662469616</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="commit5">
+      <created>1639668206933</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1639668206933</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,11 +322,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="4" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/base/dao/CustomerDAO.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
