@@ -256,7 +256,6 @@ public class UpdateInfo extends JFrame {
                 if (status) {
                     JOptionPane.showMessageDialog(null, "Customer Details Updated Successfully");
                 }
-
             } else {
                 JOptionPane.showMessageDialog(null, "Password does not match");
             }
