@@ -11,8 +11,6 @@ import java.sql.ResultSet;
 
 //This class is used for interacting with database (Writing queries and getting information)
 public class CustomerDAO {
-
-    int orderID= 0;
     
     public boolean addCustomerToDB(CustomerInfo csi) {
         Connection conn = null;
@@ -49,8 +47,10 @@ public class CustomerDAO {
         Connection conn=null;
         try {
             conn = DButil.getConnection("addOrderDetailsToDB");
+            System.out.println("hello Before pstmt");
             String query = "INSERT INTO Product_Details (Customer_ID,Parcel_Type,Parcel_Weight_KG,EST_Distance,Order_Placed_Date,EST_Delivery_Date,Fee,Payment_Type) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(query);
+            System.out.println("hello After pstmt");
             pstmt.setInt(1,csi.getCustomerID());
             pstmt.setString(2,product.getParcelType());
             pstmt.setDouble(3,product.getParcelWeightInKG());
@@ -59,8 +59,10 @@ public class CustomerDAO {
             pstmt.setString(6,product.getEstDeliveryDate());
             pstmt.setDouble(7,product.getFee());
             pstmt.setString(8,product.getPaymentType());
+            System.out.println("hello Before execute");
             int n = pstmt.executeUpdate();
-            if (n>1){
+            System.out.println("hello After executeUpdate");
+            if (n>0){
                 flag=true;
             }
         }catch (Exception exception){
@@ -88,18 +90,17 @@ public class CustomerDAO {
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
                 product.setOrderID(rs.getInt("Order_ID"));
-                orderID = rs.getInt("Order_ID");
             }
         }catch (Exception ex){
             ex.printStackTrace();
         }finally {
             DButil.closeConnection(conn,"getOrderIDFromDB");
         }
-        return orderID;
+        return product.getOrderID();
     }
 
     public boolean addSenderDetailsToDB(CustomerInfo csi,OrderDetails sender) {
-        Connection conn;
+        Connection conn = null;
         boolean flag = false;
         try {
             conn = DButil.getConnection("addSenderDetailsToDB");
@@ -118,12 +119,14 @@ public class CustomerDAO {
             }
         }catch (Exception ex){
             ex.printStackTrace();
+        }finally {
+            DButil.closeConnection(conn,"addSenderDetailsToDB");
         }
         return flag;
     }
     
     public boolean addReceiverDetailsToDB(CustomerInfo csi,OrderDetails receiver) {
-        Connection conn;
+        Connection conn = null;
         boolean flag = false;
         try {
             conn = DButil.getConnection("addSenderDetailsToDB");
@@ -142,6 +145,8 @@ public class CustomerDAO {
             }
         }catch (Exception ex){
             ex.printStackTrace();
+        }finally {
+            DButil.closeConnection(conn,"addSenderDetailsToDB");
         }
         return flag;
     }

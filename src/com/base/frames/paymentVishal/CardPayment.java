@@ -9,10 +9,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Time;
 import java.util.Calendar;
+import java.util.Timer;
+import java.util.concurrent.TimeUnit;
 
 class CardPayment extends JFrame implements ActionListener {
-
 
     public static void main(String[] args) {
         new CardPayment(csi,product,sender,receiver);
@@ -98,12 +100,44 @@ class CardPayment extends JFrame implements ActionListener {
             else {
                 CustomerDAO dao = new CustomerDAO();
                 product.setPaymentType("Card");
+                
                 boolean flag1 = dao.addOrderDetailsToDB(csi,product);
+                System.out.println("Before Time");
+                try {
+                    TimeUnit.SECONDS.sleep(3);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+                System.out.println("After Time");
+                
                 int orderId = dao.getOrderIDFromDB(csi,product);
+                try {
+                    TimeUnit.SECONDS.sleep(3);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+                
                 sender.setOrderId(orderId);
                 receiver.setOrderId(orderId);
+                
                 boolean flag2 = dao.addSenderDetailsToDB(csi,sender);
+                try {
+                    TimeUnit.SECONDS.sleep(3);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+                
                 boolean flag3 = dao.addReceiverDetailsToDB(csi,receiver);
+                try {
+                    TimeUnit.SECONDS.sleep(3);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
+                }
+    
+    
+                System.out.println("Flag1 "+flag1);
+                System.out.println("Flag2 "+flag2);
+                System.out.println("Flag3 "+flag3);
                 
                 if (flag1 && flag2 && flag3){
                     JOptionPane.showMessageDialog(null, "ORDER PLACED SUCCESSFULLY", "PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);

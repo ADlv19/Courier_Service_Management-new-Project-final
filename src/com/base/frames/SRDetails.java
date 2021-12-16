@@ -329,6 +329,7 @@ public class SRDetails<data> extends JFrame implements ActionListener {
             System.out.println(receiver);
 
             new PaymentWindow(SRDetails.csi,productObjToPass,sender,receiver).setVisible(true);
+            this.setVisible(false);
         }
     }
     private int weightOfParcel(String str){

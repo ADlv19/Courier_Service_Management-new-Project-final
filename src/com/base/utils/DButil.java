@@ -13,6 +13,7 @@ public class DButil {
         cpds.setJdbcUrl("jdbc:postgresql://satao.db.elephantsql.com:5432/nynlzcoy");
         cpds.setUser("nynlzcoy");
         cpds.setPassword("A8xMnhPbXo87Us6XgNJ9B2R4AIxxjJmX");
+        cpds.setMaxIdleTime(5);
         cpds.setMaxPoolSize(5);
         cpds.setMinPoolSize(1);
     }
