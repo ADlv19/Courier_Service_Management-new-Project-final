@@ -71,8 +71,7 @@ public class CustomerDAO {
         return flag;
     }
     
-    public boolean getOrderIDFromDB(CustomerInfo csi,Product product) {
-        boolean flag = false;
+    public Integer getOrderIDFromDB(CustomerInfo csi,Product product) {
         Connection conn = null;
         try {
             conn = DButil.getConnection("getOrderIDFromDB");
@@ -90,14 +89,13 @@ public class CustomerDAO {
             if (rs.next()) {
                 product.setOrderID(rs.getInt("Order_ID"));
                 orderID = rs.getInt("Order_ID");
-                flag = true;
             }
         }catch (Exception ex){
             ex.printStackTrace();
         }finally {
             DButil.closeConnection(conn,"getOrderIDFromDB");
         }
-        return flag;
+        return orderID;
     }
 
     public boolean addSenderDetailsToDB(CustomerInfo csi,OrderDetails sender) {
@@ -136,7 +134,7 @@ public class CustomerDAO {
             pstmt.setString(3, receiver.getName());
             pstmt.setString(4, receiver.getAddress());
             pstmt.setString(5, receiver.getCity());
-            pstmt.setString(6, receiver.getPincode());
+            pstmt.setInt(6, Integer.parseInt(receiver.getPincode()));
             pstmt.setString(7, receiver.getPhone());
             int n = pstmt.executeUpdate();
             if (n > 0) {

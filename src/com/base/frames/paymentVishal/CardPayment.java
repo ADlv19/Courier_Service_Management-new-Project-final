@@ -99,6 +99,9 @@ class CardPayment extends JFrame implements ActionListener {
                 CustomerDAO dao = new CustomerDAO();
                 product.setPaymentType("Card");
                 boolean flag1 = dao.addOrderDetailsToDB(csi,product);
+                int orderId = dao.getOrderIDFromDB(csi,product);
+                sender.setOrderId(orderId);
+                receiver.setOrderId(orderId);
                 boolean flag2 = dao.addSenderDetailsToDB(csi,sender);
                 boolean flag3 = dao.addReceiverDetailsToDB(csi,receiver);
                 
