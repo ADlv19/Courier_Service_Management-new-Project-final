@@ -62,7 +62,7 @@ public class PaymentMine extends JFrame {
         label19 = new JLabel();
         scrollPane2 = new JScrollPane();
         receiverAddressLabelToGetData = new JTextArea();
-        
+
         //======== this ========
         setFont(new Font(".AppleSystemUIFont", Font.PLAIN, 20));
         setAutoRequestFocus(false);
@@ -317,7 +317,7 @@ public class PaymentMine extends JFrame {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
         receiverAddressLabelToGetData.setEditable(false);
         addressTextAreaToGetData.setEditable(false);
-        receiptNumLabel.setText(String.valueOf(sender.getOrderId()));
+        receiptNumberLabel.setText(String.valueOf(sender.getOrderId()));
         nameLabelToGetData.setText(sender.getName());
         emailLabelToGetData.setText(csi.geteMailID());
         phoneLabelToGetData.setText(sender.getPhone());

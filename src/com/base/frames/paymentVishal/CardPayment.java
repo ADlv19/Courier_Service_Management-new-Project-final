@@ -1,6 +1,7 @@
 package com.base.frames.paymentVishal;
 
 import com.base.dao.CustomerDAO;
+import com.base.frames.Login;
 import com.base.frames.designer.PaymentMine;
 import com.base.models.CustomerInfo;
 import com.base.models.OrderDetails;
@@ -91,8 +92,7 @@ class CardPayment extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == b2) {
-            this.dispose();
-
+            
             String cardNumber = tf1.getText();
             String cvvNumber = tf2.getText();
             if (cardNumber.equals("") || cvvNumber.equals("")){
@@ -142,10 +142,12 @@ class CardPayment extends JFrame implements ActionListener {
                 
                 if (flag1 && flag2 && flag3){
                     JOptionPane.showMessageDialog(null, "ORDER PLACED SUCCESSFULLY", "PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);
+                    this.dispose();
                     new PaymentMine(csi,product,sender,receiver).setVisible(true);
                 }
                 else{
                     JOptionPane.showMessageDialog(null,"Order Failed");
+                    new Login().setVisible(true);
                 }
             }
         }
