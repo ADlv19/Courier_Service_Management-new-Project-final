@@ -40,31 +40,80 @@ public class CustomerDAO {
         return flag;
     }
 
-    public boolean addProductDetailsToDB(CustomerInfo csi,Product product) {
+    
+    
+    public boolean addOrderDetailsToDB(CustomerInfo csi,Product product) {
         boolean flag = false;
-        Connection conn;
+        Connection conn=null;
         try {
-            conn = DButil.getConnection("addProductDetailsToDB");
-            String query = "INSERT INTO Product_Details(Customer_ID,Parcel_Type,Parcel_Weight_K,EST_Distance,Order_Placed_Date,EST_Delivery_Date,Fee,Payment_Type) VALUES (?,?,?,?,?,?,?,?)";
+            conn = DButil.getConnection("addOrderDetailsToDB");
+            String query = "INSERT INTO Order_Details (Customer_ID,Parcel_Type,Parcel_Weight_KG,EST_Distance,Order_Placed_Date,EST_Delivery_Date,Fee,Payment_Type) VALUES (?,?,?,?,?,?,?,?)";
+            PreparedStatement pstmt = conn.prepareStatement(query);
+            pstmt.setInt(1,csi.getCustomerID());
+            pstmt.setString(2,product.getParcelType());
+            pstmt.setDouble(3,product.getParcelWeightInKG());
+            pstmt.setDouble(4,product.getDistance());
+            pstmt.setString(5,product.getOrderDate());
+            pstmt.setString(6,product.getEstDeliveryDate());
+            pstmt.setDouble(7,product.getFee());
+            pstmt.setString(8,product.getPaymentType());
+            int n = pstmt.executeUpdate();
+            if (n>1){
+                flag=true;
+            }
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }finally {
+            DButil.closeConnection(conn,"addOrderDetailsToDB");
+        }
+        return flag;
+    }
+
+    public boolean addSenderDetailsToDB(CustomerInfo csi,OrderDetails sender) {
+        Connection conn;
+        boolean flag = false;
+        try {
+            conn = DButil.getConnection("addSenderDetailsToDB");
+            String query = "INSERT INTO Sender_Details(Customer_ID,Sender_Name,Sender_Address,Sender_City,Sender_Pincode,Sender_Phone_Number) VALUES (?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(query);
             pstmt.setInt(1, csi.getCustomerID());
-            pstmt.setString(2, product.getParcelType());
-            pstmt.setDouble(3, product.getParcelWeightInKG());
-            pstmt.setString(4, product.getOrderDate());
-            pstmt.setString(5, product.getEstDeliveryDate());
-            pstmt.setDouble(6, product.getFee());
-            pstmt.setString(7, product.getPaymentType());
+            pstmt.setString(2, sender.getName());
+            pstmt.setString(3, sender.getAddress());
+            pstmt.setString(4, sender.getCity());
+            pstmt.setString(5, sender.getPincode());
+            pstmt.setString(6, sender.getPhone());
             int n = pstmt.executeUpdate();
             if (n > 0) {
                 flag = true;
             }
-        } catch (Exception ex) {
+        }catch (Exception ex){
             ex.printStackTrace();
         }
-
         return flag;
     }
-
+    
+    public boolean addReceiverDetailsToDB(CustomerInfo csi,OrderDetails receiver) {
+        Connection conn;
+        boolean flag = false;
+        try {
+            conn = DButil.getConnection("addSenderDetailsToDB");
+            String query = "INSERT INTO Recipient_Details(Customer_ID,Sender_Name,Sender_Address,Sender_City,Sender_Pincode,Sender_Phone_Number) VALUES (?,?,?,?,?,?)";
+            PreparedStatement pstmt = conn.prepareStatement(query);
+            pstmt.setInt(1, csi.getCustomerID());
+            pstmt.setString(2, receiver.getName());
+            pstmt.setString(3, receiver.getAddress());
+            pstmt.setString(4, receiver.getCity());
+            pstmt.setString(5, receiver.getPincode());
+            pstmt.setString(6, receiver.getPhone());
+            int n = pstmt.executeUpdate();
+            if (n > 0) {
+                flag = true;
+            }
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return flag;
+    }
 
     // USED IN LOGIN TO CHECK PASSWORD
     public CustomerInfo findCustomerByEmailID(String emailID) {
@@ -159,34 +208,6 @@ public class CustomerDAO {
             ex.printStackTrace();
         } finally {
             DButil.closeConnection(conn, "updateCustomerDetails");
-        }
-        return flag;
-    }
-
-
-    public boolean addOrderDetailsToDB(CustomerInfo csi,Product product) {
-        boolean flag = false;
-        Connection conn=null;
-        try {
-            conn = DButil.getConnection("addOrderDetailsToDB");
-            String query = "INSERT INTO Order_Details (Customer_ID,Parcel_Type,Parcel_Weight_KG,EST_Distance,Order_Placed_Date,EST_Delivery_Date,Fee,Payment_Type) VALUES (?,?,?,?,?,?,?,?)";
-            PreparedStatement pstmt = conn.prepareStatement(query);
-            pstmt.setInt(1,csi.getCustomerID());
-            pstmt.setString(2,product.getParcelType());
-            pstmt.setDouble(3,product.getParcelWeightInKG());
-            pstmt.setDouble(4,product.getDistance());
-            pstmt.setString(5,product.getOrderDate());
-            pstmt.setString(6,product.getEstDeliveryDate());
-            pstmt.setDouble(7,product.getFee());
-            pstmt.setString(8,product.getPaymentType());
-            int n = pstmt.executeUpdate();
-            if (n>1){
-                flag=true;
-            }
-        }catch (Exception exception){
-            exception.printStackTrace();
-        }finally {
-            DButil.closeConnection(conn,"addOrderDetailsToDB");
         }
         return flag;
     }

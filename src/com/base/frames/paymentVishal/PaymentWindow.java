@@ -19,10 +19,10 @@ public class PaymentWindow extends JFrame implements ActionListener {
         new PaymentWindow(csi, product, sender, receiver);
     }
 
-    static CustomerInfo csi = new CustomerInfo();
-    static Product product = new Product();
-    static OrderDetails sender = new OrderDetails();
-    static OrderDetails receiver = new OrderDetails();
+    static CustomerInfo csi;
+    static Product product;
+    static OrderDetails sender;
+    static OrderDetails receiver;
 
     JLabel l1, totalFee;
     JButton b1, b2;
@@ -132,15 +132,19 @@ public class PaymentWindow extends JFrame implements ActionListener {
             // Net Banking
             setVisible(false);
         }else if (e.getSource() == r4) {
-            
             // Cash Payment
-            setVisible(false);
-            JOptionPane.showMessageDialog(null, "ORDER PLACED SUCCESSFULLY", "PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);
-            boolean flag = dao.addProductDetailsToDB(csi,product);
-            if (flag) {
+            boolean flag1 = dao.addOrderDetailsToDB(csi,product);
+            boolean flag2 = dao.addSenderDetailsToDB(csi,sender);
+            boolean flag3 = dao.addReceiverDetailsToDB(csi,receiver);
+            
+            if (flag1 && flag2 && flag3) {
+                JOptionPane.showMessageDialog(null, "ORDER PLACED SUCCESSFULLY", "PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);
+                setVisible(false);
                 new PaymentMine(PaymentWindow.csi, PaymentWindow.product,PaymentWindow.sender,PaymentWindow.receiver).setVisible(true);
             }
-            
+            else {
+                JOptionPane.showMessageDialog(null, "ORDER NOT PLACED", "PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);
+            }
         }
     }
 }

@@ -1,70 +1,54 @@
-
-Page 1 : Welcome --> SignUp / Login
-Page 2 : SignUp / Login
-Page 3 : 
-
-
 Create Table Customer_Info(
-	
+
 	Customer_ID SERIAL                          PRIMARY KEY ,
 	First_Name VARCHAR(20)                      NOT NULL    ,
 	Last_Name VARCHAR(20)                                   ,
-	Mobile_Number BIGINT                        NOT NULL
-	
+	Mobile_Number VARCHAR(13)                   NOT NULL    ,
+    E_Mail_ID VARCHAR(50)                       UNIQUE      ,
+	Password VARCHAR(20)                        NOT NULL
+
 );
 
-Create Table Customer_Auth(
-	
-	Customer_ID INT                                     ,
-	E_Mail_ID VARCHAR(50)                       UNIQUE  ,
-	Password BIGINT                             NOT NULL,
-	
-	FOREIGN KEY (Customer_ID) REFERENCES Customer_Info(Customer_ID)
-);
+CREATE TABLE Product_Details(
 
-CREATE TABLE Order_Details(
-	
-	Order_ID SERIAL                             PRIMARY KEY,
-	Customer_ID INT                                        ,
-	Parcel_Type VARCHAR(20)                                , 
-	Parcel_Weight_KG NUMERIC(5,2)                          ,
-	EST_Distance REAL                                    ,
-	Order_Placed_Date TIMESTAMP                            ,
-	EST_Delivery_Date TIMESTAMP                            ,
-	Dimensions VARCHAR(30)                                 ,
-	Fee NUMERIC(7,2)                                       ,
-	Payment_Type VARCHAR(10)                               ,
-	
+	Order_ID SERIAL                             PRIMARY KEY ,
+	Customer_ID INT                                         ,
+	Parcel_Type VARCHAR(20)                                 ,
+	Parcel_Weight_KG NUMERIC(5,2)                           ,
+	Order_Placed_Date VARCHAR(40)                           ,
+	EST_Delivery_Date VARCHAR(40)                           ,
+	Fee NUMERIC(7,2)                                        ,
+	Payment_Type VARCHAR(10)                                ,
+
 	FOREIGN KEY (Customer_ID) REFERENCES Customer_Info(Customer_ID)
 );
 
 Create Table Sender_Details(
-	
+
 	Order_ID INT                                           ,
 	Customer_ID INT                                        ,
-	Name VARCHAR(30)                                     
-	Pincode INT                                 NOT NULL,
-	City VARCHAR(20)                            NOT NULL,
-	Sender_Address VARCHAR(100)                 NOT NULL,
-	Contact_Number BIGINT                               ,
-	
+	Name VARCHAR(40)                                       ,
+	Pincode INT                                            ,
+	City VARCHAR(50)                                       ,
+	Sender_Address VARCHAR(100)                            ,
+	Contact_Number VARCHAR(20)                             ,
+
 	FOREIGN KEY (Customer_ID) REFERENCES Customer_Info(Customer_ID),
-	FOREIGN KEY (Order_ID) REFERENCES Order_Details(Order_ID)
-	
+	FOREIGN KEY (Order_ID) REFERENCES Product_Details(Order_ID)
+
 );
 
 Create Table Recipient_Details(
-	
-	Order_ID INT                                           ,
-	Customer_ID INT                                        , 
-	Name VARCHAR(50)                               NOT NULL,
-	Pincode INT                                    NOT NULL,                                       
-	City VARCHAR(20)                                       ,
-	Delivery_Address VARCHAR(100)                  NOT NULL,
-	Contact_Number BIGINT                          NOT NULL,      
-	
-	FOREIGN KEY (Customer_ID) REFERENCES Customer_Info(Customer_ID),
-	FOREIGN KEY (Order_ID) REFERENCES Order_Details(Order_ID)
-	
-); 
 
+	Order_ID INT                                           ,
+	Customer_ID INT                                        ,
+	Name VARCHAR(40)                                       ,
+	Pincode INT                                            ,
+	City VARCHAR(50)                                       ,
+	Delivery_Address VARCHAR(100)                          ,
+	Contact_Number BIGINT                                  ,
+
+	FOREIGN KEY (Customer_ID) REFERENCES Customer_Info(Customer_ID),
+	FOREIGN KEY (Order_ID) REFERENCES Product_Details(Order_ID)
+
+);

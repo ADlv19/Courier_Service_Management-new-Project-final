@@ -98,9 +98,11 @@ class CardPayment extends JFrame implements ActionListener {
             else {
                 CustomerDAO dao = new CustomerDAO();
                 product.setPaymentType("Card");
-                boolean flag = dao.addOrderDetailsToDB(csi, product);
-
-                if (flag) {
+                boolean flag1 = dao.addOrderDetailsToDB(csi,product);
+                boolean flag2 = dao.addSenderDetailsToDB(csi,sender);
+                boolean flag3 = dao.addReceiverDetailsToDB(csi,receiver);
+                
+                if (flag1 && flag2 && flag3){
                     JOptionPane.showMessageDialog(null, "ORDER PLACED SUCCESSFULLY", "PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);
                 }
                 else{
