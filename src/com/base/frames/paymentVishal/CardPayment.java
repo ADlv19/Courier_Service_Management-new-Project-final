@@ -22,7 +22,8 @@ class CardPayment extends JFrame implements ActionListener {
     static Product product;
     static OrderDetails sender;
     static OrderDetails receiver;
-
+    
+    
     JLabel l1;
     JTextField tf1, tf2;
     JButton b1, b2;

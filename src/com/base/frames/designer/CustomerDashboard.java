@@ -160,6 +160,7 @@ public class CustomerDashboard extends JFrame {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
         
         userName.setText(csi.getFirstName() + " " + csi.getLastName());
+        setBackground(Color.PINK);
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables

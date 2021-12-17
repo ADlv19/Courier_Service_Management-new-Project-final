@@ -14,14 +14,21 @@ import java.awt.event.ActionListener;
 import java.util.concurrent.TimeUnit;
 
 public class PaymentWindow extends JFrame implements ActionListener {
-
+    
+    
+    
+    
     CustomerDAO dao = new CustomerDAO();
     
-    static CustomerInfo csi;
-    static Product product;
-    static OrderDetails sender;
-    static OrderDetails receiver;
-
+    static CustomerInfo csi = new CustomerInfo();
+    static Product product = new Product();
+    static OrderDetails sender = new OrderDetails();
+    static OrderDetails receiver = new OrderDetails();
+    
+    public static void main(String[] args) {
+        new PaymentWindow(csi,product, sender, receiver);
+    }
+    
     JLabel l1, totalFee;
     JButton b1, b2;
     JRadioButton r1, r2, r3, r4;
@@ -109,12 +116,13 @@ public class PaymentWindow extends JFrame implements ActionListener {
         r3.addActionListener(this);
         r4.addActionListener(this);
 
-        getContentPane().setBackground(Color.WHITE);
-
+        getContentPane().setBackground(Color.CYAN);
+        
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1020, 720);
         this.setLocation(200, 50);
         this.setVisible(true);
+        
     }
 
     @Override

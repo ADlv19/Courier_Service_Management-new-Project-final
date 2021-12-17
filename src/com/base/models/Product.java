@@ -25,9 +25,7 @@ public class Product {
         this.fee = fee;
         this.paymentType = paymentType;
     }
-
-
-
+    
     public int getOrderID() {
         return orderID;
     }

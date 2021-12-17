@@ -29,5 +29,4 @@ public class TableExample extends JFrame {
         setTitle("Previous Order Details");
     }
     
-    
 }
