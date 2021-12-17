@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9915f566-df47-4bf0-b3dd-3c8e4032c717" name="Changes" comment="commit5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/base/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/dao/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/base/frames/designer/CustomerDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/designer/CustomerDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/base/frames/designer/CustomerDashboard.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/designer/CustomerDashboard.jfd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/base/frames/designer/TableExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/designer/TableExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/designer/UpdateInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/designer/UpdateInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/designer/UpdateInfo.jfd" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/designer/UpdateInfo.jfd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/main/CourierMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/main/CourierMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,20 @@
       <recent name="$PROJECT_DIR$/src/com/base/frames/designer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TableExample">
+  <component name="RunManager" selected="Application.UpdateInfo">
+    <configuration name="CourierMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.base.main.CourierMain" />
+      <module name="Courier_Service_Management" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.base.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Login" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.base.frames.Login" />
       <module name="Courier_Service_Management" />
@@ -80,21 +93,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PaymentWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.base.frames.paymentVishal.PaymentWindow" />
-      <module name="Courier_Service_Management" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.base.frames.paymentVishal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SRDetails" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.base.frames.SRDetails" />
+    <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.base.frames.MainFrame" />
       <module name="Courier_Service_Management" />
       <extension name="coverage">
         <pattern>
@@ -134,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UpdateInfo" />
+        <item itemvalue="Application.MainFrame" />
+        <item itemvalue="Application.CourierMain" />
         <item itemvalue="Application.TableExample" />
         <item itemvalue="Application.Login" />
-        <item itemvalue="Application.PaymentWindow" />
-        <item itemvalue="Application.SRDetails" />
-        <item itemvalue="Application.UpdateInfo" />
       </list>
     </recent_temporary>
   </component>
@@ -180,7 +180,7 @@
       <workItem from="1639630471363" duration="582000" />
       <workItem from="1639645293001" duration="588000" />
       <workItem from="1639649976839" duration="19502000" />
-      <workItem from="1639727469428" duration="1497000" />
+      <workItem from="1639727469428" duration="2432000" />
     </task>
     <task id="LOCAL-00001" summary="comm.it">
       <created>1639463202013</created>
@@ -343,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639729154334</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="commit5">
+      <created>1639729405057</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1639729405057</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

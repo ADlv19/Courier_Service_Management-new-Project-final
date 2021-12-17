@@ -1,4 +1,4 @@
-JFDML JFormDesigner: "7.0.5.0.404" Java: "11.0.13" encoding: "UTF-8"
+JFDML JFormDesigner: "7.0.5.0.404" Java: "11.0.12" encoding: "UTF-8"
 
 new FormModel {
 	contentType: "form/swing"
@@ -9,7 +9,7 @@ new FormModel {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq {par l {seq l {space :43::x, par l {comp updatePassTxt::t:p:156:p, par l:t::p {comp fNameTxt::l::161:x, comp phoneNumTxt::l::161:x, comp confirmPassTxt::l:p:150:p, comp emailTxt::l::161:x}, comp lNameTxt::t:p:161:p}, space ::35:x, par l {comp lastName::t:p:140:p, par l:t::p {comp conirmPassword::::140:x, comp emailField::::140:x, comp firstName::l::140:x}, comp phoneNum::t:p:140:p, comp password::t:p:140:p}, space :p:9:p, comp label6:::p:100:p, space :::p, comp passForLogin:::p:136:p}, seq {space :p:95:p, comp updateBtn:::p:163:p, space :0:335:x}}, space :::p}, seq t {space :0:176:x, comp label1:::p:320:p, space :p:103:p}}"
+					"$horizontalGroup": "par l {seq {space :43::x, par l {comp updatePassTxt::t:p:156:p, par l:t::p {comp fNameTxt::l::161:x, comp phoneNumTxt::l::161:x, comp confirmPassTxt::l:p:150:p, comp emailTxt::l::161:x}, comp lNameTxt::t:p:161:p}, space ::35:x, par l {comp lastName::t:p:140:p, par l:t::p {comp conirmPassword::::140:x, comp emailField::::140:x, comp firstName::l::140:x}, comp phoneNum::t:p:140:p, comp password::t:p:140:p}, space :p:9:p, comp label6:::p:100:p, space :::p, comp passForLogin:::p:136:p, space :::p}, seq t {space :0:176:x, comp label1:::p:320:p, space :p:103:p}, seq l {space :p:95:p, comp updateBtn:::p:163:p, space :76:341:x}}"
 					"$verticalGroup": "par l {seq {space :p:20:p, comp label1:::p:46:p, space :p:34:p, par b {comp emailField::b:p::p, comp label6::b:p:30:p, comp emailTxt::b:p:30:p, comp passForLogin::b:p::p}, space :p:44:p, par b {comp fNameTxt::b:p:30:p, comp firstName::b:p::p}, space :p:42:p, par b {comp lNameTxt::b:p:30:p, comp lastName::b:p::p}, space :p:33:p, par b {comp phoneNumTxt::b:p:30:p, comp phoneNum::b:p::p}, space :p:48:p, par b {comp updatePassTxt::b:p:30:p, comp password::b:p::p}, space :p:48:p, par b {comp conirmPassword::b:p::p, comp confirmPassTxt::b:::x}, space :p:53:p, comp updateBtn:::p::p, space ::72:x}}"
 				} ) {
 					name: "contentPanel"
@@ -88,14 +88,7 @@ new FormModel {
 						"text": "OK"
 					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
 						"gridx": 1
-						"gridy": 0
-					} )
-					add( new FormComponent( "javax.swing.JButton" ) {
-						name: "cancelButton"
-						"text": "Cancel"
-					}, new FormLayoutConstraints( class com.jformdesigner.runtime.GridBagConstraintsEx ) {
-						"gridx": 2
-						"gridy": 0
+						"gridwidth": 2
 					} )
 				}, new FormLayoutConstraints( class java.lang.String ) {
 					"value": "South"

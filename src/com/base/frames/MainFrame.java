@@ -50,7 +50,7 @@ public class MainFrame extends JFrame implements ActionListener {
         this.setSize(1000, 800);
         this.add(login);
         this.add(signUP);
-        //this.add(seePreviousOrders);
+        setLocation(200, 30);
         this.add(label);
     }
 
