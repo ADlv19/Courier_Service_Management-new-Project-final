@@ -311,15 +311,16 @@ public class CustomerDAO {
         Connection conn = null;
         try {
             conn = DButil.getConnection("getPreviousOrderDetails");
-            String query = "SELECT Product_Details.order_id, Sender_Details.name, sender_address, R_name, delivery_address, parcel_type, parcel_weight_kg, fee FROM Sender_Details JOIN Recipient_Details ON Sender_Details.order_ID = Recipient_Details.order_ID JOIN Product_Details ON Product_Details.order_ID = Sender_Details.order_ID WHERE Product_details.customer_id = ?";
-            PreparedStatement pstmt = conn.prepareStatement(query);
-            pstmt.setInt(1, customerID);
+            String query = "SELECT Product_Details.order_id, Sender_Details.name, sender_address, R_name, delivery_address, parcel_type, parcel_weight_kg, fee FROM Sender_Details JOIN Recipient_Details ON Sender_Details.order_ID = Recipient_Details.order_ID JOIN Product_Details ON Product_Details.order_ID = Sender_Details.order_ID WHERE Product_details.customer_id = "+customerID;
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = stmt.executeQuery(query);
             
-            ResultSet rs = pstmt.executeQuery();
             int rowCount = getRowCount(rs); // Row Count
             int columnCount = getColumnCount(rs); // Column Count
-            data = new Object[rowCount][columnCount];
             
+            data = new Object[rowCount][columnCount];
+    
+            rs.beforeFirst();
             int i=0;
             while(rs.next()) {
                 int j=0;
@@ -333,7 +334,7 @@ public class CustomerDAO {
                 data[i][j++] = rs.getString("fee");
                 i++;
             }
-            
+            stmt.close();
         }catch (Exception e) {
             e.printStackTrace();
         }

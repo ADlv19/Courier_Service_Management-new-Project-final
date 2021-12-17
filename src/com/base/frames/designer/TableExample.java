@@ -1,26 +1,29 @@
 package com.base.frames.designer;
 
+import com.base.dao.CustomerDAO;
+import com.base.models.CustomerInfo;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TableExample extends JFrame {
 
+    
+    static CustomerInfo csi = new CustomerInfo();
     JTable jt;
     JScrollPane sp;
-
-
-    String[][] data = new String[100][8];
+    CustomerDAO dao = new CustomerDAO();
     String[] column = {"Order ID", "NAME", "Address", "Reciever Name","Reciever Address","Item","Weight","Toatal Cost"};
     JButton back;
     
     public static void main(String[] args) {
-        new TableExample();
+        new TableExample(csi);
     }
     
-    TableExample() {
-        
-        setDataInJTable(data);
+    TableExample(CustomerInfo csi) {
+        TableExample.csi = csi;
+        Object [][] data = dao.getPreviousOrderDetails(TableExample.csi.getCustomerID());
         jt = new JTable(data, column);
         jt.setBounds(0, 500, 200, 300);
         sp = new JScrollPane(jt);
@@ -30,14 +33,8 @@ public class TableExample extends JFrame {
         setLocation(200, 200);
         setVisible(true);
         setLayout(null);
+        setTitle("Previous Order Details");
     }
     
-    public String[][] setDataInJTable(String[][] data){
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < data[j].length; j++) {
-                data[i][j] = "hi";
-            }
-        }
-        return data;
-    }
+    
 }
