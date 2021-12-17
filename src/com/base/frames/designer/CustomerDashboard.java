@@ -72,7 +72,7 @@ public class CustomerDashboard extends JFrame {
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
             dialogPane.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new
-            javax. swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax
+            javax. swing. border. EmptyBorder( 0, 0, 0, 0) , "", javax
             . swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java
             .awt .Font ("D\u0069alog" ,java .awt .Font .BOLD ,12 ), java. awt
             . Color. red) ,dialogPane. getBorder( )) ); dialogPane. addPropertyChangeListener (new java. beans.
