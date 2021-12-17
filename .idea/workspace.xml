@@ -4,9 +4,17 @@
     <list default="true" id="9915f566-df47-4bf0-b3dd-3c8e4032c717" name="Changes" comment="commit5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/base/dao/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/dao/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/base/frames/SRDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/SRDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/designer/CustomerDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/designer/CustomerDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/designer/PaymentMine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/designer/PaymentMine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/base/frames/designer/TableExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/designer/TableExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/designer/UpdateInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/designer/UpdateInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/paymentVishal/CardPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/paymentVishal/CardPayment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/base/frames/paymentVishal/PaymentWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/paymentVishal/PaymentWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/base/frames/paymentVishal/UpiPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/base/frames/paymentVishal/UpiPayment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +189,7 @@
       <workItem from="1639645293001" duration="588000" />
       <workItem from="1639649976839" duration="19502000" />
       <workItem from="1639727469428" duration="3938000" />
-      <workItem from="1639732480062" duration="2957000" />
+      <workItem from="1639732480062" duration="3575000" />
     </task>
     <task id="LOCAL-00001" summary="comm.it">
       <created>1639463202013</created>
@@ -372,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639730489378</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="commit5">
+      <created>1639739082601</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1639739082601</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

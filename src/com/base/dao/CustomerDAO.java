@@ -8,8 +8,9 @@ import com.base.utils.DButil;
 import java.sql.*;
 
 //This class is used for interacting with database (Writing queries and getting information)
-public class CustomerDAO {
+public class CustomerDAO implements CustomerDAOInterface {
     
+    @Override
     public boolean addCustomerToDB(CustomerInfo csi) {
         Connection conn = null;
         boolean flag = false;
@@ -17,13 +18,13 @@ public class CustomerDAO {
             conn = DButil.getConnection("addCustomerToDB");
             String query = "INSERT INTO Customer_Info(First_Name,Last_Name,Mobile_Number,E_Mail_ID,Password) VALUES (?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(query);
-
+            
             pstmt.setString(1, csi.getFirstName());
             pstmt.setString(2, csi.getLastName());
             pstmt.setString(3, csi.getPhoneNumber());
             pstmt.setString(4, csi.geteMailID());
             pstmt.setString(5, csi.getPassword());
-
+            
             int n = pstmt.executeUpdate();
             if (n > 0) {
                 flag = true;
@@ -34,11 +35,12 @@ public class CustomerDAO {
         } finally {
             DButil.closeConnection(conn, "addCustomerToDB");
         }
-
+        
         return flag;
     }
     
-    public boolean addOrderDetailsToDB(CustomerInfo csi,Product product) {
+    @Override
+    public boolean addOrderDetailsToDB(CustomerInfo csi, Product product) {
         boolean flag = false;
         Connection conn=null;
         try {
@@ -66,7 +68,8 @@ public class CustomerDAO {
         return flag;
     }
     
-    public Integer getOrderIDFromDB(CustomerInfo csi,Product product) {
+    @Override
+    public Integer getOrderIDFromDB(CustomerInfo csi, Product product) {
         Connection conn = null;
         try {
             conn = DButil.getConnection("getOrderIDFromDB");
@@ -91,8 +94,9 @@ public class CustomerDAO {
         }
         return product.getOrderID();
     }
-
-    public boolean addSenderDetailsToDB(CustomerInfo csi,OrderDetails sender) {
+    
+    @Override
+    public boolean addSenderDetailsToDB(CustomerInfo csi, OrderDetails sender) {
         Connection conn = null;
         boolean flag = false;
         try {
@@ -118,7 +122,8 @@ public class CustomerDAO {
         return flag;
     }
     
-    public boolean addReceiverDetailsToDB(CustomerInfo csi,OrderDetails receiver) {
+    @Override
+    public boolean addReceiverDetailsToDB(CustomerInfo csi, OrderDetails receiver) {
         Connection conn = null;
         boolean flag = false;
         try {
@@ -143,8 +148,8 @@ public class CustomerDAO {
         }
         return flag;
     }
-
-    // USED IN LOGIN TO CHECK PASSWORD
+    
+    @Override
     public CustomerInfo findCustomerByEmailID(String emailID) {
         Connection conn = null;
         CustomerInfo csi = new CustomerInfo();
@@ -169,7 +174,8 @@ public class CustomerDAO {
         }
         return csi;
     }
-
+    
+    @Override
     public boolean checkIfMailAlreadyRegistered(String emailID) {
         Connection conn = null;
         boolean ifEmailExists = false;
@@ -178,7 +184,7 @@ public class CustomerDAO {
             String query = "SELECT 1 FROM Customer_Info WHERE E_Mail_ID =?";
             PreparedStatement pstmt = conn.prepareStatement(query);
             pstmt.setString(1, emailID);
-
+            
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
                 ifEmailExists = true;
@@ -193,30 +199,31 @@ public class CustomerDAO {
     
     /** Unused Method
      * public Product getProductDetailsFromDB(CustomerInfo csi, Product product) {
-        Connection conn = null;
-        try {
-            conn = DButil.getConnection("getProductDetailsFromDB");
-            String query = "SELECT Order_ID, Parcel_Type, Parcel_Weight_KG, Order_Placed_Date, EST_Delivery_Date, Dimensions, Fee, Payment_Type FROM Product_Details WHERE Customer_ID = ?";
-            PreparedStatement pstmt = conn.prepareStatement(query);
-            pstmt.setInt(1, csi.getCustomerID());
-            ResultSet rs = pstmt.executeQuery();
-            while (rs.next()) {
-                product.setOrderID(rs.getInt("Order_ID"));
-                product.setParcelType(rs.getString("Parcel_Type"));
-                product.setParcelWeightInKG(rs.getDouble("Parcel_Weight_KG"));
-                product.setOrderDate(rs.getString("Order_Placed_Date"));
-                product.setEstDeliveryDate(rs.getString("EST_Delivery_Date"));
-                product.setFee(rs.getDouble("Fee"));
-                product.setPaymentType(rs.getString("Payment_Type"));
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-            DButil.closeConnection(conn, "getProductDetailsFromDB");
-        }
-        return product;
-    }*/
-
+     Connection conn = null;
+     try {
+     conn = DButil.getConnection("getProductDetailsFromDB");
+     String query = "SELECT Order_ID, Parcel_Type, Parcel_Weight_KG, Order_Placed_Date, EST_Delivery_Date, Dimensions, Fee, Payment_Type FROM Product_Details WHERE Customer_ID = ?";
+     PreparedStatement pstmt = conn.prepareStatement(query);
+     pstmt.setInt(1, csi.getCustomerID());
+     ResultSet rs = pstmt.executeQuery();
+     while (rs.next()) {
+     product.setOrderID(rs.getInt("Order_ID"));
+     product.setParcelType(rs.getString("Parcel_Type"));
+     product.setParcelWeightInKG(rs.getDouble("Parcel_Weight_KG"));
+     product.setOrderDate(rs.getString("Order_Placed_Date"));
+     product.setEstDeliveryDate(rs.getString("EST_Delivery_Date"));
+     product.setFee(rs.getDouble("Fee"));
+     product.setPaymentType(rs.getString("Payment_Type"));
+     }
+     } catch (Exception ex) {
+     ex.printStackTrace();
+     } finally {
+     DButil.closeConnection(conn, "getProductDetailsFromDB");
+     }
+     return product;
+     }*/
+    
+    @Override
     public boolean updateCustomerDetails(CustomerInfo customerInfo) {
         boolean flag = false;
         Connection conn = null;
@@ -240,7 +247,46 @@ public class CustomerDAO {
         }
         return flag;
     }
-
+    
+    @Override
+    public Object[][] getPreviousOrderDetails(Integer customerID) {
+        Object[][] data = null;
+        Connection conn = null;
+        try {
+            conn = DButil.getConnection("getPreviousOrderDetails");
+            String query = "SELECT Product_Details.order_id, Sender_Details.name, sender_address, R_name, delivery_address, parcel_type, parcel_weight_kg, fee FROM Sender_Details JOIN Recipient_Details ON Sender_Details.order_ID = Recipient_Details.order_ID JOIN Product_Details ON Product_Details.order_ID = Sender_Details.order_ID WHERE Product_details.customer_id = "+customerID;
+            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = stmt.executeQuery(query);
+            
+            int rowCount = getRowCount(rs); // Row Count
+            int columnCount = getColumnCount(rs); // Column Count
+            
+            data = new Object[rowCount][columnCount];
+            
+            rs.beforeFirst();
+            int i=0;
+            while(rs.next()) {
+                int j=0;
+                data[i][j++] = rs.getInt("order_id");
+                data[i][j++] = rs.getString("name");
+                data[i][j++] = rs.getString("sender_address");
+                data[i][j++] = rs.getString("R_name");
+                data[i][j++] = rs.getString("delivery_address");
+                data[i][j++] = rs.getString("parcel_type");
+                data[i][j++] = rs.getString("parcel_weight_kg");
+                data[i][j] = rs.getString("fee");
+                i++;
+            }
+            stmt.close();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        finally {
+            DButil.closeConnection(conn, "getPreviousOrderDetails");
+        }
+        return data;
+    }
+    
     private int getRowCount(ResultSet rs) {
         try {
             if(rs != null) {
@@ -263,43 +309,5 @@ public class CustomerDAO {
             e.printStackTrace();
         }
         return 0;
-    }
-    
-    public Object[][] getPreviousOrderDetails(Integer customerID) {
-        Object[][] data = null;
-        Connection conn = null;
-        try {
-            conn = DButil.getConnection("getPreviousOrderDetails");
-            String query = "SELECT Product_Details.order_id, Sender_Details.name, sender_address, R_name, delivery_address, parcel_type, parcel_weight_kg, fee FROM Sender_Details JOIN Recipient_Details ON Sender_Details.order_ID = Recipient_Details.order_ID JOIN Product_Details ON Product_Details.order_ID = Sender_Details.order_ID WHERE Product_details.customer_id = "+customerID;
-            Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = stmt.executeQuery(query);
-            
-            int rowCount = getRowCount(rs); // Row Count
-            int columnCount = getColumnCount(rs); // Column Count
-            
-            data = new Object[rowCount][columnCount];
-    
-            rs.beforeFirst();
-            int i=0;
-            while(rs.next()) {
-                int j=0;
-                data[i][j++] = rs.getInt("order_id");
-                data[i][j++] = rs.getString("name");
-                data[i][j++] = rs.getString("sender_address");
-                data[i][j++] = rs.getString("R_name");
-                data[i][j++] = rs.getString("delivery_address");
-                data[i][j++] = rs.getString("parcel_type");
-                data[i][j++] = rs.getString("parcel_weight_kg");
-                data[i][j++] = rs.getString("fee");
-                i++;
-            }
-            stmt.close();
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-        finally {
-            DButil.closeConnection(conn, "getPreviousOrderDetails");
-        }
-        return data;
     }
 }
