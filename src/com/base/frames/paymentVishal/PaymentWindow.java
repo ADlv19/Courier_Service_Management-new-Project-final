@@ -6,19 +6,17 @@ import com.base.models.CustomerInfo;
 import com.base.models.OrderDetails;
 import com.base.models.Product;
 
+import javax.management.timer.Timer;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.TimeUnit;
 
 public class PaymentWindow extends JFrame implements ActionListener {
 
     CustomerDAO dao = new CustomerDAO();
     
-    public static void main(String[] args) {
-        new PaymentWindow(csi, product, sender, receiver);
-    }
-
     static CustomerInfo csi;
     static Product product;
     static OrderDetails sender;
@@ -124,17 +122,35 @@ public class PaymentWindow extends JFrame implements ActionListener {
         if (e.getSource() == r1) {
             setVisible(false);
             new UpiPayment(PaymentWindow.csi,PaymentWindow.product,PaymentWindow.sender,PaymentWindow.receiver).setVisible(true);
-        } else if (e.getSource() == r2) {
+        }
+        
+        else if (e.getSource() == r2) {
             setVisible(false);
             new CardPayment(csi,product,sender,receiver).setVisible(true);
-        } else if (e.getSource() == r3) {
-            // Net Banking
-            setVisible(false);
-        }else if (e.getSource() == r4) {
+        }
+        
+        else if (e.getSource() == r4) {
             // Cash Payment
             boolean flag1 = dao.addOrderDetailsToDB(csi,product);
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+            
             boolean flag2 = dao.addSenderDetailsToDB(csi,sender);
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+            
             boolean flag3 = dao.addReceiverDetailsToDB(csi,receiver);
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
             
             if (flag1 && flag2 && flag3) {
                 JOptionPane.showMessageDialog(null, "ORDER PLACED SUCCESSFULLY", "PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);

@@ -17,10 +17,6 @@ class UpiPayment extends JFrame implements ActionListener {
     static OrderDetails sender;
     static OrderDetails receiver;
     
-    public static void main(String[] args) {
-        new UpiPayment(csi,product,sender,receiver);
-    }
-    
     JLabel l1;
     JTextField tf1,tf2;
     JButton b1 , b2;

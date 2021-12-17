@@ -18,7 +18,7 @@ public class SRDetails<data> extends JFrame implements ActionListener {
     static CustomerInfo csi;
 
     JLabel l1, l2, l3, l4, l5, l6, sender, reciever, l7, l8, l9;
-    JButton submit, clearSen, clearRec, back;
+    JButton submit, clearSen, back;
     //JButton addItem;
     JComboBox<String> jcbFrom;
     JComboBox<String> jcbTo;
@@ -30,16 +30,7 @@ public class SRDetails<data> extends JFrame implements ActionListener {
     //DefaultListModel<Object> model;
     //JTable table;
     //JScrollPane jsp;
-
-    // 2 dimensional array to store the data of 5 2 dimensional arrays with initializations
-    String[][] data = new String[5][2];
-
-    String[] column;
-
-    public static void main(String[] args) {
-        new SRDetails(csi);
-    }
-
+    
     public SRDetails(CustomerInfo csi) {
         SRDetails.csi = csi;
         /** model = new DefaultListModel<>();
@@ -200,11 +191,11 @@ public class SRDetails<data> extends JFrame implements ActionListener {
             clearSen.setBackground(Color.black);
             clearSen.setForeground(Color.white);
 
-            clearRec = new JButton("Clear");
+            /*clearRec = new JButton("Clear");
             clearRec.setFont(new Font("Arial", Font.ITALIC, 30));
             clearRec.setBounds(750, 530, 140, 40);
             clearRec.setBackground(Color.black);
-            clearRec.setForeground(Color.white);
+            clearRec.setForeground(Color.white);*/
 
             submit = new JButton("Submit");
             submit.setFont(new Font("Arial", Font.ITALIC, 30));
@@ -243,7 +234,7 @@ public class SRDetails<data> extends JFrame implements ActionListener {
             //this.add(clearRec);
             //this.add(addItem);
 
-            clearRec.addActionListener(this);
+            //clearRec.addActionListener(this);
             clearSen.addActionListener(this);
             submit.addActionListener(this);
             back.addActionListener(this);
@@ -279,7 +270,7 @@ public class SRDetails<data> extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == clearRec) {
+        if (e.getSource() == clearSen) {
             tfl22.setText("");
             tfl32.setText("");
             tfl52.setText("");

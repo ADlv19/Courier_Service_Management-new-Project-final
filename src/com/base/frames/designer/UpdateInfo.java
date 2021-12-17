@@ -22,10 +22,6 @@ public class UpdateInfo extends JFrame {
 
     boolean checkIfUpdated = false;
     
-    public static void main(String[] args) {
-        new UpdateInfo().setVisible(true);
-    }
-
     private void okButtonEvnt(ActionEvent e) {
         checkIfUpdated=true;
         this.dispose();

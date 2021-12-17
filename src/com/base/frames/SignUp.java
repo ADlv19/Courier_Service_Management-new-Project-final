@@ -10,10 +10,6 @@ import java.awt.event.ActionListener;
 
 public class SignUp extends JFrame implements ActionListener {
 
-    public static void main(String[] args) {
-        new SignUp();
-    }
-
     JFrame jf;
     JLabel l1, l2, l3, l4, l5, l6;
     JTextField fName, lName, phoneNumber, emailID;

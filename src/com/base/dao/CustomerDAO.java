@@ -37,8 +37,6 @@ public class CustomerDAO {
 
         return flag;
     }
-
-    
     
     public boolean addOrderDetailsToDB(CustomerInfo csi,Product product) {
         boolean flag = false;
@@ -192,9 +190,9 @@ public class CustomerDAO {
         }
         return ifEmailExists;
     }
-
-
-    public Product getProductDetailsFromDB(CustomerInfo csi, Product product) {
+    
+    /** Unused Method
+     * public Product getProductDetailsFromDB(CustomerInfo csi, Product product) {
         Connection conn = null;
         try {
             conn = DButil.getConnection("getProductDetailsFromDB");
@@ -217,7 +215,7 @@ public class CustomerDAO {
             DButil.closeConnection(conn, "getProductDetailsFromDB");
         }
         return product;
-    }
+    }*/
 
     public boolean updateCustomerDetails(CustomerInfo customerInfo) {
         boolean flag = false;
@@ -242,46 +240,7 @@ public class CustomerDAO {
         }
         return flag;
     }
-    public Object[][] getPassengerDetails() {
-        Connection conn = null ;
-        Object[][] data = null;
-        boolean status;
-        
-        try {
-            conn = DButil.getConnection("getPassengerDetails");
-            String QUERY = "Select p_id, user10_id, full_name, contact_no, gender, age from passenger";
-            
-            Statement statement = conn.createStatement();
-            
-            Statement stmt = conn.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = stmt.executeQuery (QUERY);
-            
-            int rowCount = getRowCount(rs); // Row Count
-            int columnCount = getColumnCount(rs); // Column Count
-            
-            data = new Object[rowCount][columnCount];
-            
-            rs.beforeFirst();
-            int i = 0;
-            while (rs.next()) {
-                int j = 0;
-                data[i][j++] = rs.getInt("p_id");
-                data[i][j++] = rs.getInt("user10_id");
-                data[i][j++] = rs.getString("full_name");
-                data[i][j++] = rs.getString("contact_no");
-                data[i][j++] = rs.getString("gender");
-                data[i][j++] = rs.getString("age");
-                i++;
-            }
-            status = true;
-            // Closing the Resources;
-            statement.close();
-            conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return data;
-    }
+
     private int getRowCount(ResultSet rs) {
         try {
             if(rs != null) {

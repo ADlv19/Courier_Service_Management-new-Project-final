@@ -22,10 +22,6 @@ public class CustomerDashboard extends JFrame {
     
     static CustomerInfo csi;
     
-    public static void main(String[] args) {
-        new CustomerDashboard(csi).setVisible(true);
-    }
-
     public CustomerDashboard(CustomerInfo csi) {
         CustomerDashboard.csi = csi;
         initComponents();

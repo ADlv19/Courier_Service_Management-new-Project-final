@@ -8,10 +8,6 @@ import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame implements ActionListener {
 
-    public static void main(String[] args) {
-        new MainFrame();
-    }
-
     JButton login;
     JButton signUP;
     //JButton seePreviousOrders;

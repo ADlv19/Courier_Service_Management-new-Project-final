@@ -12,11 +12,7 @@ import java.awt.event.ActionListener;
 public class Login extends JFrame implements ActionListener {
 
     static String email_ID;
-
-    public static void main(String[] args) {
-        new Login();
-    }
-
+    
     JLabel l1, l2, l3;
     JTextField emailID;
     JPasswordField pf;

@@ -17,11 +17,7 @@ import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 class CardPayment extends JFrame implements ActionListener {
-
-    public static void main(String[] args) {
-        new CardPayment(csi,product,sender,receiver);
-    }
-
+    
     static CustomerInfo csi;
     static Product product;
     static OrderDetails sender;

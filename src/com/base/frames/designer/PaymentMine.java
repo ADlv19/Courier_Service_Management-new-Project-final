@@ -20,11 +20,7 @@ public class PaymentMine extends JFrame {
     static Product product;
     static OrderDetails sender;
     static OrderDetails receiver;
-
-    public static void main(String[] args) {
-        new PaymentMine(csi,product,sender,receiver).setVisible(true);
-    }
-
+    
     public PaymentMine(CustomerInfo csi, Product product, OrderDetails sender, OrderDetails receiver) {
         PaymentMine.csi = csi;
         PaymentMine.product = product;
