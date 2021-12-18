@@ -20,7 +20,7 @@ import javax.swing.border.*;
 
 public class CustomerDashboard extends JFrame {
     
-    static CustomerInfo csi;
+    static CustomerInfo csi= new CustomerInfo();
     
     public CustomerDashboard(CustomerInfo csi) {
         CustomerDashboard.csi = csi;
@@ -39,7 +39,7 @@ public class CustomerDashboard extends JFrame {
 
     private void cancelButton(ActionEvent e) {
         dispose();
-        new Login();
+        new Login().setVisible(true);
     }
 
     private void previousOrder(ActionEvent e) {
@@ -160,7 +160,21 @@ public class CustomerDashboard extends JFrame {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
         
         userName.setText(csi.getFirstName() + " " + csi.getLastName());
-        setBackground(Color.PINK);
+        
+        cancelButton.setBackground(Color.BLACK);
+        cancelButton.setForeground(Color.WHITE);
+        
+        newOrderButton.setBackground(Color.BLACK);
+        newOrderButton.setForeground(Color.WHITE);
+        
+        previousOrderButton.setBackground(Color.BLACK);
+        previousOrderButton.setForeground(Color.WHITE);
+        
+        settingsButtom.setBackground(Color.BLACK);
+        settingsButtom.setForeground(Color.WHITE);
+        
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables

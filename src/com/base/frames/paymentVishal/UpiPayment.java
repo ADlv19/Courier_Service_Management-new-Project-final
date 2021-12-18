@@ -1,5 +1,6 @@
 package com.base.frames.paymentVishal;
 
+import com.base.dao.CustomerDAO;
 import com.base.frames.designer.PaymentMine;
 import com.base.models.CustomerInfo;
 import com.base.models.OrderDetails;
@@ -9,6 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.TimeUnit;
 
 class UpiPayment extends JFrame implements ActionListener {
 
@@ -80,6 +82,48 @@ class UpiPayment extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == b2  ) {
+            
+            CustomerDAO dao = new CustomerDAO();
+            product.setPaymentType("UPI");
+    
+            boolean flag1 = dao.addOrderDetailsToDB(csi,product);
+            System.out.println("Before Time");
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+            System.out.println("After Time");
+    
+            int orderId = dao.getOrderIDFromDB(csi,product);
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+    
+            sender.setOrderId(orderId);
+            receiver.setOrderId(orderId);
+    
+            boolean flag2 = dao.addSenderDetailsToDB(csi,sender);
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+    
+            boolean flag3 = dao.addReceiverDetailsToDB(csi,receiver);
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+    
+    
+            System.out.println("Flag1 "+flag1);
+            System.out.println("Flag2 "+flag2);
+            System.out.println("Flag3 "+flag3);
+            
             JOptionPane.showMessageDialog(null,"ORDER PLACED SUCCESSFULLY","PAYMENT WINDOW", JOptionPane.PLAIN_MESSAGE);
             setVisible(false);
             new PaymentMine(UpiPayment.csi, UpiPayment.product,UpiPayment.sender,UpiPayment.receiver).setVisible(true);

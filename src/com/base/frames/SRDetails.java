@@ -1,5 +1,6 @@
 package com.base.frames;
 
+import com.base.frames.designer.CustomerDashboard;
 import com.base.frames.paymentVishal.PaymentWindow;
 import com.base.models.CustomerInfo;
 import com.base.models.OrderDetails;
@@ -281,7 +282,7 @@ public class SRDetails<data> extends JFrame implements ActionListener {
             tfl61.setText("");
         } else if (e.getSource() == back) {
             this.setVisible(false);
-            new Login();
+            new CustomerDashboard(csi);
 
         } else if (e.getSource() == submit) {
 
